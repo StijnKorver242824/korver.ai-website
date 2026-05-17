@@ -1,12 +1,12 @@
-title: Stijn Korver — F1 Data Engineer
+title: Stijn Korver
 email: stijn@korver.ai
-description: Portfolio of F1 data engineering projects. Targeting Data Analytics Engineer at Audi Revolut F1 Team.
+description: Portfolio of motorsport data engineering projects
 baseurl: ""
 url: "https://korver.ai"
 
 # Collections
 collections:
-  projects_en:
+  projects:
     output: true
     permalink: /projects/:name/
 
@@ -24,7 +24,7 @@ defaults:
       lang: en
   - scope:
       path: ""
-      type: projects_en
+      type: projects
     values:
       lang: en
       layout: project

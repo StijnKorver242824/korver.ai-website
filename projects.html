@@ -16,7 +16,7 @@ permalink: /projects/
 
 <section class="projects" style="background: var(--bg);">
   <div class="projects-grid">
-    {% assign f1_projects = site.projects_en | sort: 'order' %}
+    {% assign f1_projects = site.projects | sort: 'order' %}
     {% for project in f1_projects %}
     <div class="project-card-wrap reveal">
       <a href="{{ project.url | relative_url }}" class="project-card">

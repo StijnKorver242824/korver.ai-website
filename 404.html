@@ -22,7 +22,8 @@ title: Page Not Found
     font-family: var(--font-head);
     font-size: clamp(12rem, 30vw, 22rem);
     font-weight: 800;
-    color: var(--gray-light);
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.04);
     letter-spacing: -0.05em;
     line-height: 1;
     z-index: 0;
@@ -42,10 +43,11 @@ title: Page Not Found
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    background: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid rgba(232,213,163,0.3);
     padding: 0.3rem 1rem;
-    border-radius: 2rem;
-    color: var(--navy);
+    border-radius: 2px;
+    color: var(--accent);
     margin-bottom: 1.25rem;
   }
   .not-found h1 {
@@ -53,14 +55,14 @@ title: Page Not Found
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
     letter-spacing: -0.04em;
-    color: var(--navy);
+    color: var(--text-primary);
     margin-bottom: 1rem;
     line-height: 1.1;
   }
-  .not-found h1 em { font-style: normal; color: var(--gray); }
+  .not-found h1 em { font-style: normal; color: var(--accent); }
   .not-found p {
-    font-size: 1.05rem;
-    color: var(--gray);
+    font-size: 1rem;
+    color: var(--text-secondary);
     font-weight: 300;
     line-height: 1.7;
     max-width: 420px;
@@ -72,7 +74,6 @@ title: Page Not Found
     justify-content: center;
     flex-wrap: wrap;
   }
-
   @media (max-width: 600px) {
     .not-found-actions { flex-direction: column; align-items: center; }
   }
@@ -81,27 +82,11 @@ title: Page Not Found
 <div class="not-found">
   <div class="not-found-content reveal">
     <div class="not-found-tag">404</div>
-    <h1 id="nf-heading">Page <em>not found</em></h1>
-    <p id="nf-body">The page you're looking for doesn't exist or may have moved. Let's get you back on track.</p>
+    <h1>Page <em>not found</em></h1>
+    <p>The page you're looking for doesn't exist or may have moved. Let's get you back on track.</p>
     <div class="not-found-actions">
-      <a id="nf-home" href="/en/" class="btn-primary">Back to Home</a>
-      <a id="nf-contact" href="/en/contact/" class="btn-secondary">Get in Touch</a>
+      <a href="/" class="btn-primary">Back to Home</a>
+      <a href="/#contact" class="btn-secondary">Get in Touch</a>
     </div>
   </div>
 </div>
-
-<script>
-  (function() {
-    var isNL = window.location.pathname.indexOf('/nl/') === 0
-            || document.referrer.indexOf('/nl/') !== -1;
-
-    if (isNL) {
-      document.getElementById('nf-heading').innerHTML = 'Pagina <em>niet gevonden</em>';
-      document.getElementById('nf-body').textContent = 'De pagina die je zoekt bestaat niet of is verplaatst. Laten we je weer op weg helpen.';
-      document.getElementById('nf-home').textContent = 'Terug naar Home';
-      document.getElementById('nf-home').href = '/nl/';
-      document.getElementById('nf-contact').textContent = 'Neem Contact Op';
-      document.getElementById('nf-contact').href = '/nl/contact/';
-    }
-  })();
-</script>
