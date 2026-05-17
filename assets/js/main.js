@@ -91,7 +91,6 @@
         '06': { x: 91,   y: 852  }
       };
 
-      const id = corner.getAttribute('data-project');
       const pos = tipPositions[id] || { x: parseFloat(corner.getAttribute('data-cx')), y: parseFloat(corner.getAttribute('data-cy')) };
       const scaleX = svgRect.width / 2127;
       const scaleY = svgRect.height / 2127;
