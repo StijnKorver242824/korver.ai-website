@@ -1,32 +1,45 @@
-title: Stijn Korver
-email: stijn@korver.ai
-description: Portfolio of motorsport data engineering projects
+title: Korver AI Solutions
+email: hello@korver.ai
+description: Korver AI Solutions develops purposeful software and research-driven projects at the intersection of technology and real-world impact.
 baseurl: ""
 url: "https://korver.ai"
+instagram_username: korver.ai
 
 # Collections
 collections:
-  projects:
+  projects_en:
     output: true
-    permalink: /projects/:name/
+    permalink: /en/projects/:name/
+  projects_nl:
+    output: true
+    permalink: /nl/projecten/:name/
 
 # Build Settings
 remote_theme: null
 plugins:
   - jekyll-feed
 
-# Defaults
+# Language Settings
 defaults:
   - scope:
-      path: ""
+      path: "en"
     values:
-      layout: default
       lang: en
   - scope:
+      path: "nl"
+    values:
+      lang: nl
+  - scope:
       path: ""
-      type: projects
+      type: projects_en
     values:
       lang: en
+      layout: project
+  - scope:
+      path: ""
+      type: projects_nl
+    values:
+      lang: nl
       layout: project
 
 # Exclude from Processing

@@ -1,0 +1,268 @@
+---
+layout: default
+title: Projecten
+permalink: /nl/projecten/
+lang: nl
+lang_en: /en/projects/
+---
+
+<style>
+  .projects-page-hero {
+    padding: 10rem 3rem 4rem;
+    background: var(--accent);
+    position: relative;
+    overflow: hidden;
+  }
+  .projects-page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(245,184,0,0.12) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .projects-page-hero-content { position: relative; z-index: 1; }
+  .projects-page-hero .section-tag { color: rgba(55,71,130,0.5); }
+  .projects-page-hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--navy);
+    margin: 0.5rem 0 0;
+  }
+  .projects-page-hero h1 em { font-style: normal; color: var(--black); }
+  .projects-page-hero-sub {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(55,71,130,0.65);
+    line-height: 1.75;
+    max-width: 520px;
+    margin-top: 1rem;
+  }
+
+  .projects-page-body { padding: 4rem 3rem; background: var(--gray-light); }
+
+  /* CONTROLS */
+  .projects-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-group {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: var(--gray-light);
+    border: 1.5px solid transparent;
+    color: var(--gray);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .filter-btn:hover { border-color: var(--gray-mid); color: var(--black); }
+  .filter-btn.active { background: var(--black); color: var(--white); border-color: var(--black); }
+
+  .sort-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .sort-label {
+    font-size: 0.8rem;
+    color: var(--gray);
+    font-weight: 400;
+    white-space: nowrap;
+  }
+  .sort-select {
+    background: var(--gray-light);
+    border: 1.5px solid transparent;
+    color: var(--black);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.4rem 0.75rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+    padding-right: 1.75rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%237a7f9a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.6rem center;
+  }
+  .sort-select:focus { border-color: var(--black); }
+
+  .projects-count {
+    font-size: 0.8rem;
+    color: var(--gray);
+    font-weight: 300;
+  }
+  .projects-count span { font-weight: 600; color: var(--black); }
+
+  /* GRID */
+  .projects-all-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .project-card-wrap {
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .project-card-wrap.hidden {
+    display: none;
+  }
+
+  .no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--gray);
+    font-weight: 300;
+    display: none;
+  }
+  .no-results.visible { display: block; }
+
+  @media (max-width: 900px) {
+    .projects-page-hero { padding: 8rem 1.5rem 3rem; }
+    .projects-page-body { padding: 3rem 1.5rem; }
+    .projects-all-grid { grid-template-columns: repeat(2, 1fr); }
+    .projects-controls { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 600px) {
+    .projects-all-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- HERO -->
+<section class="projects-page-hero">
+  <div class="projects-page-hero-content">
+    <p class="section-tag">Werk</p>
+    <h1>Alle <em>Projecten</em></h1>
+    <p class="projects-page-hero-sub">Een volledig overzicht van afgeronde projecten. Van computervisie en intelligente automatisering tot onderzoek en meer.</p>
+  </div>
+</section>
+
+<!-- BODY -->
+<div class="projects-page-body">
+
+  <!-- CONTROLS -->
+  <div class="projects-controls">
+    <div class="filter-group" id="filterGroup">
+      <button class="filter-btn active" data-filter="all">All</button>
+      {% assign all_tags = site.projects_nl | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
+      {% for tag in all_tags %}
+        <button class="filter-btn" data-filter="{{ tag | strip }}">{{ tag | strip }}</button>
+      {% endfor %}
+    </div>
+    <div style="display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+      <p class="projects-count"><span id="visibleCount">{{ site.projects_nl | size }}</span> van {{ site.projects_nl | size }} projecten</p>
+      <div class="sort-group">
+        <span class="sort-label">Sorteer op</span>
+        <select class="sort-select" id="sortSelect">
+          <option value="date-desc">Nieuw eerst</option>
+          <option value="date-asc">Oud eerst</option>
+          <option value="title">Alfabetisch</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div class="projects-all-grid" id="projectsGrid">
+    {% assign sorted_projects = site.projects_nl | sort: 'order' %}
+    {% for project in sorted_projects %}
+    <div class="project-card-wrap reveal"
+         data-tags="{{ project.tags | join: ',' }}"
+         data-order="{{ project.order }}"
+         data-date="{{ project.date }}"
+         data-title="{{ project.title }}">
+      <a href="{{ project.url | relative_url }}" class="project-card">
+        <div class="project-number">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
+        {% if project.banner %}
+          <div class="project-banner">
+            <img src="{{ project.banner | relative_url }}" alt="{{ project.title }}" />
+          </div>
+        {% else %}
+          <div class="project-icon">{{ project.icon }}</div>
+        {% endif %}
+        <h3 class="project-title">{{ project.title }}</h3>
+        <p class="project-desc">{{ project.summary }}</p>
+        <div class="project-tags">
+          {% for tag in project.tags %}
+            <span class="project-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+    <div class="no-results" id="noResults">Geen projecten die aan dit filter voldoen.</div>
+  </div>
+
+</div>
+
+<script>
+  const cards = Array.from(document.querySelectorAll('.project-card-wrap'));
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const sortSelect = document.getElementById('sortSelect');
+  const grid = document.getElementById('projectsGrid');
+  const visibleCount = document.getElementById('visibleCount');
+  const noResults = document.getElementById('noResults');
+
+  let activeFilter = 'all';
+
+  function updateGrid() {
+    // Filter
+    let visible = cards.filter(card => {
+      if (activeFilter === 'all') return true;
+      const tags = card.dataset.tags.split(',').map(t => t.trim());
+      return tags.includes(activeFilter);
+    });
+
+    cards.forEach(card => card.classList.add('hidden'));
+    visible.forEach(card => card.classList.remove('hidden'));
+
+    // Sort
+    const sortVal = sortSelect.value;
+    visible.sort((a, b) => {
+
+      if (sortVal === 'title') return a.dataset.title.localeCompare(b.dataset.title);
+      if (sortVal === 'date-desc') return (b.dataset.date || '').localeCompare(a.dataset.date || '');
+      if (sortVal === 'date-asc') return (a.dataset.date || '').localeCompare(b.dataset.date || '');
+      return 0;
+    });
+
+    // Re-append in sorted order
+    visible.forEach(card => grid.appendChild(card));
+
+    // Count
+    visibleCount.textContent = visible.length;
+    noResults.classList.toggle('visible', visible.length === 0);
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      updateGrid();
+    });
+  });
+
+  sortSelect.addEventListener('change', updateGrid);
+  
+  updateGrid(); // run on page load
+</script>
