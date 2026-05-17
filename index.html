@@ -3,138 +3,286 @@ layout: default
 permalink: /
 ---
 
+<div class="grid-lines" aria-hidden="true"></div>
+
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-dot-grid"></div>
-  <div class="hero-content">
-    <span class="hero-tag">Data Analytics Engineer</span>
-    <h1>Building the tools<br/>that win <span class="accent-word">races.</span></h1>
-    <p class="hero-sub">Applied Data Science & AI student at Breda University. Building F1-specific analytics infrastructure — from live telemetry pipelines to race strategy simulators. Targeting Audi Revolut F1 Team.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn-primary">View Projects</a>
-      <a href="#contact" class="btn-secondary">Get in Touch</a>
-    </div>
+<section id="hero">
+  <div class="hero-bg-number" aria-hidden="true">01</div>
+
+  <div class="hero-tag">Data Analytics Engineer</div>
+
+  <h1>Building the<br>tools that win<br><em>races.</em></h1>
+
+  <p class="hero-desc">
+    Applied Data Science & AI student at Breda University of Applied Sciences.
+    Building F1-specific analytics infrastructure — from live telemetry pipelines
+    to race strategy simulators. Targeting Audi F1.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#projects" class="btn-primary">View projects</a>
+    <a href="#contact" class="btn-ghost">Get in touch <span>→</span></a>
   </div>
+
+  <div class="hero-scroll" aria-hidden="true">Scroll</div>
 </section>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stat reveal">
-    <div class="stat-number">€3M</div>
-    <div class="stat-label">Revenue opportunity identified</div>
-  </div>
-  <div class="stat reveal">
-    <div class="stat-number">1M+</div>
-    <div class="stat-label">Records analysed</div>
-  </div>
-  <div class="stat reveal">
-    <div class="stat-number">100+</div>
-    <div class="stat-label">Accounts managed</div>
-  </div>
-  <div class="stat reveal">
-    <div class="stat-number">6</div>
-    <div class="stat-label">F1 projects in roadmap</div>
-  </div>
-</div>
-
 <!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-visual reveal">
-    <div class="about-visual-inner"></div>
+<section id="about">
+  <div class="about-text fade-up">
+    <div class="section-label">About</div>
+    <h2>Engineer.<br>Analyst.<br>Founder.</h2>
+
+    <p style="margin-top: 2rem;">
+      Second-year Applied Data Science & AI student simultaneously holding
+      a <strong>commercial analyst role</strong> managing over 100 customer accounts —
+      not a student doing coursework, but someone operating at professional level
+      across both tracks.
+    </p>
+    <p>
+      I identified a <strong>€3M revenue opportunity</strong> through analysis of
+      1M+ pallet movements at La Palette Rouge. I built CI/CD-deployed computer vision
+      systems, physical RL controllers, and NLP transformer models — all the way to
+      production.
+    </p>
+    <p>
+      Registered founder of Korver AI Solutions. Pivoting from that path to go
+      all-in on F1 data engineering, where the technical demands are the highest
+      and the margin for error is zero.
+    </p>
+
+    <div class="skills-grid">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">FastAPI</span>
+      <span class="skill-tag">PyTorch</span>
+      <span class="skill-tag">scikit-learn</span>
+      <span class="skill-tag">XGBoost</span>
+      <span class="skill-tag">Stable Baselines 3</span>
+      <span class="skill-tag">FastF1</span>
+      <span class="skill-tag">Azure ML</span>
+      <span class="skill-tag">Docker</span>
+      <span class="skill-tag">CI/CD</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">TypeScript</span>
+    </div>
   </div>
-  <div class="about-text reveal">
-    <p class="section-tag">About</p>
-    <h2 class="section-title">Engineer.<br/>Analyst.<br/><em>Founder.</em></h2>
-    <p>Second-year Applied Data Science & AI student simultaneously holding a <strong>commercial analyst role</strong> managing over 100 customer accounts — not a student doing coursework, but someone operating at professional level across both tracks.</p>
-    <p>I identified a <strong>€3M revenue opportunity</strong> through analysis of 1M+ pallet movements at La Palette Rouge. I built CI/CD-deployed computer vision systems, physical RL controllers, and NLP transformer models — all the way to production.</p>
-    <p>Registered founder of Korver AI Solutions. Pivoting from that path to go all-in on F1 data engineering, where the technical demands are the highest and the margin for error is zero.</p>
-    <div style="margin-top: 2rem;">
-      <a href="/projects/" class="btn-primary">View All Projects</a>
+
+  <div class="fade-up" style="transition-delay: 0.15s;">
+    <div class="about-stats">
+      <div class="stat-block">
+        <div class="stat-number">€3M</div>
+        <div class="stat-label">Revenue opportunity identified</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">1M+</div>
+        <div class="stat-label">Records analysed</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">Accounts managed</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">6</div>
+        <div class="stat-label">F1 projects in roadmap</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="projects">
-  <div class="projects-header reveal">
-    <div>
-      <p class="section-tag">Projects</p>
-      <h2 class="section-title">F1 data <em>portfolio.</em></h2>
-    </div>
-    <a href="/projects/" class="btn-secondary">All Projects</a>
-  </div>
+<section id="projects">
+  <div class="section-label fade-up">Projects</div>
+  <h2 class="fade-up">F1 data<br>portfolio.</h2>
+  <p class="section-intro fade-up">
+    Six projects, each targeting a specific gap between where I am and
+    where a Data Analytics Engineer at an F1 team needs to be.
+    Built to be used, not just demonstrated.
+  </p>
+
   <div class="projects-grid">
-    {% assign f1_projects = site.projects | sort: 'order' %}
-    {% for project in f1_projects limit: 3 %}
-    <div class="project-card-wrap reveal">
-      <a href="{{ project.url | relative_url }}" class="project-card">
-        <div class="project-number">{{ forloop.index | prepend: '0' | slice: -2, 2 }} / 06</div>
-        {% if project.banner %}
-          <div class="project-banner">
-            <img src="{{ project.banner | relative_url }}" alt="{{ project.title }}" />
-          </div>
-        {% else %}
-          <div class="project-icon">{{ project.icon }}</div>
-        {% endif %}
-        <h3 class="project-title">{{ project.title }}</h3>
-        <p class="project-desc">{{ project.summary }}</p>
-        <div class="project-tags">
-          {% for tag in project.tags %}
-            <span class="project-tag">{{ tag }}</span>
-          {% endfor %}
-        </div>
-      </a>
+
+    <!-- P1 -->
+    <div class="project-card fade-up">
+      <span class="project-number">01 / 06</span>
+      <span class="project-status status-building">Building</span>
+      <h3 class="project-title">Telemetry Anomaly Detection</h3>
+      <p class="project-desc">
+        Multi-channel anomaly scoring across 250+ sensor channels — speed, throttle, brake pressure,
+        tyre temperatures — surfacing statistically significant deviations that flag mechanical events,
+        driving inconsistencies, or setup issues in real time.
+      </p>
+      <div class="project-stack">
+        <span class="stack-tag">FastF1</span>
+        <span class="stack-tag">PyOD</span>
+        <span class="stack-tag">scikit-learn</span>
+        <span class="stack-tag">Streamlit</span>
+        <span class="stack-tag">pandas</span>
+      </div>
     </div>
-    {% endfor %}
+
+    <!-- P2 -->
+    <div class="project-card fade-up" style="transition-delay: 0.05s;">
+      <span class="project-number">02 / 06</span>
+      <span class="project-status status-planned">Planned</span>
+      <h3 class="project-title">Interactive Telemetry Dashboard</h3>
+      <p class="project-desc">
+        Web-based telemetry explorer with lap comparison, sector heatmaps, tyre compound filtering,
+        and driver head-to-head views. FastAPI backend serving FastF1 data with a TypeScript/React
+        frontend — the closest thing to what engineers actually use trackside.
+      </p>
+      <div class="project-stack">
+        <span class="stack-tag">FastF1</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">TypeScript</span>
+        <span class="stack-tag">Plotly.js</span>
+      </div>
+    </div>
+
+    <!-- P3 -->
+    <div class="project-card fade-up" style="transition-delay: 0.1s;">
+      <span class="project-number">03 / 06</span>
+      <span class="project-status status-planned">Planned</span>
+      <h3 class="project-title">Post-Race Report Generator</h3>
+      <p class="project-desc">
+        Automated pipeline that ingests each Grand Prix weekend's data via FastF1 and produces
+        a structured PDF report — pace analysis, tyre degradation curves, undercut/overcut
+        modelling, weather correlation. Published every race weekend via GitHub Actions.
+      </p>
+      <div class="project-stack">
+        <span class="stack-tag">FastF1</span>
+        <span class="stack-tag">matplotlib</span>
+        <span class="stack-tag">Jinja2</span>
+        <span class="stack-tag">WeasyPrint</span>
+        <span class="stack-tag">GitHub Actions</span>
+      </div>
+    </div>
+
+    <!-- P4 -->
+    <div class="project-card fade-up" style="transition-delay: 0.05s;">
+      <span class="project-number">04 / 06</span>
+      <span class="project-status status-planned">Planned</span>
+      <h3 class="project-title">Lap Time Delta Predictor</h3>
+      <p class="project-desc">
+        Predictive model for tyre degradation as a function of compound, age, fuel load, track
+        temperature, and circuit characteristics — wrapped in an engineer-facing dashboard where
+        strategists simulate pit windows with uncertainty bounds and SHAP explainability.
+      </p>
+      <div class="project-stack">
+        <span class="stack-tag">XGBoost</span>
+        <span class="stack-tag">LightGBM</span>
+        <span class="stack-tag">SHAP</span>
+        <span class="stack-tag">FastF1</span>
+        <span class="stack-tag">Plotly Dash</span>
+      </div>
+    </div>
+
+    <!-- P5 -->
+    <div class="project-card fade-up" style="transition-delay: 0.1s;">
+      <span class="project-number">05 / 06</span>
+      <span class="project-status status-planned">Planned</span>
+      <h3 class="project-title">RaceCTRL — Incident Detection</h3>
+      <p class="project-desc">
+        Complete rebuild of a motorsport incident classifier — EfficientNet-B3 replacing a
+        custom CNN, 1000+ image dataset replacing 200, Grad-CAM validation baked into training
+        to eliminate livery label leakage. Deployed as a web app: upload a clip, get a
+        classification and heatmap overlay.
+      </p>
+      <div class="project-stack">
+        <span class="stack-tag">PyTorch</span>
+        <span class="stack-tag">EfficientNet-B3</span>
+        <span class="stack-tag">Grad-CAM</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">React</span>
+      </div>
+    </div>
+
+    <!-- P6 -->
+    <div class="project-card fade-up" style="transition-delay: 0.15s;">
+      <span class="project-number">06 / 06</span>
+      <span class="project-status status-planned">Planned</span>
+      <h3 class="project-title">Race Strategy RL Simulator</h3>
+      <p class="project-desc">
+        Custom Gymnasium environment modelling pit stop timing, tyre selection, and safety car
+        response. PPO agent trained against calibrated rule-based opponents — degradation parameters
+        grounded in real FastF1 data. Multi-agent component directly mirrors the internship specification.
+      </p>
+      <div class="project-stack">
+        <span class="stack-tag">Gymnasium</span>
+        <span class="stack-tag">Stable Baselines 3</span>
+        <span class="stack-tag">PPO</span>
+        <span class="stack-tag">FastF1</span>
+        <span class="stack-tag">Streamlit</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- TRAJECTORY -->
 <section id="trajectory">
-  <p class="section-tag reveal">Trajectory</p>
-  <h2 class="section-title reveal">The path <em>to Audi F1.</em></h2>
-  <p class="reveal" style="color: var(--text-secondary); max-width: 520px; font-weight: 300; line-height: 1.75; margin-bottom: 4rem;">Each step adds something the previous one lacked. The cumulative profile by the time of full-time application will be formidable.</p>
+  <div class="section-label fade-up">Trajectory</div>
+  <h2 class="fade-up">The path<br>to Audi F1.</h2>
+  <p class="section-intro fade-up">
+    Each step adds something the previous one lacked.
+    The cumulative profile by the time of full-time application will be formidable.
+  </p>
 
-  <div class="trajectory-timeline">
+  <div class="timeline fade-up" style="transition-delay: 0.1s;">
 
-    <div class="tl-item reveal">
-      <div class="tl-dot active"></div>
-      <div class="tl-body">
-        <div class="tl-period">2024 — 2026</div>
-        <div class="tl-title">BSc Applied Data Science & AI</div>
-        <div class="tl-inst">Breda University of Applied Sciences</div>
-        <p class="tl-desc">Full-stack AI portfolio: U-Net segmentation + physical RL robotics, CI/CD deployment, NLP transformers, computer vision, statistical research. Commercial analyst role running parallel throughout.</p>
+    <div class="timeline-item">
+      <div class="timeline-dot active"></div>
+      <div class="timeline-period">2024 — 2026</div>
+      <div class="timeline-title">BSc Applied Data Science & AI</div>
+      <div class="timeline-inst">Breda University of Applied Sciences</div>
+      <div class="timeline-desc">
+        Full-stack AI portfolio: U-Net segmentation + physical RL robotics, CI/CD deployment,
+        NLP transformer models, computer vision, statistical research. Commercial analyst role
+        running parallel throughout.
       </div>
     </div>
 
-    <div class="tl-item reveal">
-      <div class="tl-dot"></div>
-      <div class="tl-body">
-        <div class="tl-period">Summer 2026</div>
-        <div class="tl-title">Introduction to Motorsport Engineering</div>
-        <div class="tl-inst">Cranfield University</div>
-        <p class="tl-desc">Vehicle dynamics, powertrain systems, aerodynamics, motorsport simulation. Closes the domain-specific gap no data science programme addresses.</p>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Summer 2026</div>
+      <div class="timeline-title">Introduction to Motorsport Engineering</div>
+      <div class="timeline-inst">Cranfield University</div>
+      <div class="timeline-desc">
+        Vehicle dynamics, powertrain systems, aerodynamics, motorsport simulation.
+        Closes the domain-specific gap no data science programme addresses.
       </div>
     </div>
 
-    <div class="tl-item reveal">
-      <div class="tl-dot"></div>
-      <div class="tl-body">
-        <div class="tl-period">2027 — 2028</div>
-        <div class="tl-title">Premaster + MSc Data Science in Business & Entrepreneurship</div>
-        <div class="tl-inst">JADS — TU/e + Tilburg University</div>
-        <p class="tl-desc">Algorithms, ML theory, advanced statistics, databases. Full data science cycle with legal and societal context.</p>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Summer 2026</div>
+      <div class="timeline-title">Blended Intensive Programme</div>
+      <div class="timeline-inst">SRH Heidelberg</div>
+      <div class="timeline-desc">
+        Real-time computer vision, LLM-guided systems, edge AI deployment.
       </div>
     </div>
 
-    <div class="tl-item reveal">
-      <div class="tl-dot target"></div>
-      <div class="tl-body">
-        <div class="tl-period">Target: 2028</div>
-        <div class="tl-title">Data Analytics Engineer — Audi Revolut F1 Team</div>
-        <div class="tl-inst">Audi F1</div>
-        <p class="tl-desc">Building the analytical infrastructure race engineers rely on. Trackside, under pressure, on race weekends.</p>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">2027 — 2028</div>
+      <div class="timeline-title">Premaster + MSc Data Science in Business & Entrepreneurship</div>
+      <div class="timeline-inst">JADS — TU/e + Tilburg University</div>
+      <div class="timeline-desc">
+        Algorithms, ML theory, advanced statistics, databases.
+        Full data science cycle with legal and societal context.
+        Target graduation: 2028.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Target: 2028</div>
+      <div class="timeline-title">Data Analytics Engineer — Audi F1</div>
+      <div class="timeline-inst">Audi Revolut F1 Team</div>
+      <div class="timeline-desc">
+        Building the analytical infrastructure race engineers rely on.
+        Trackside, under pressure, on race weekends.
       </div>
     </div>
 
@@ -142,82 +290,24 @@ permalink: /
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
-  <p class="section-tag">Contact</p>
-  <h2 class="section-title">Let's talk <em>data.</em></h2>
-  <p class="contact-sub">Currently looking for F1 data internship opportunities from 2026.<br/>If you're working in motorsport data — or if you're Davide Marinaro — I'd love to connect.</p>
-  <a href="mailto:stijn@korver.ai" class="contact-email">stijn@korver.ai</a>
-  <div style="display:flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; justify-content: center;">
-    <a href="https://www.linkedin.com/in/stijnkorver" target="_blank" class="btn-primary">LinkedIn ↗</a>
-    <a href="https://github.com/stijnkorver" target="_blank" class="btn-secondary">GitHub</a>
+<section id="contact">
+  <div class="section-label" style="justify-content: center;">Contact</div>
+  <h2>Let's talk<br><em>data.</em></h2>
+  <p>
+    Currently looking for F1 data internship opportunities from 2026.
+    If you're working in motorsport data — or if you're Davide Marinaro — I'd
+    genuinely love to hear what skills matter most in your role.
+  </p>
+
+  <div class="contact-links">
+    <a href="https://www.linkedin.com/in/stijnkorver" target="_blank" class="contact-link primary">
+      LinkedIn ↗
+    </a>
+    <a href="https://github.com/stijnkorver" target="_blank" class="contact-link">
+      GitHub
+    </a>
+    <a href="mailto:stijn@korver.ai" class="contact-link">
+      stijn@korver.ai
+    </a>
   </div>
 </section>
-
-<style>
-/* Trajectory timeline */
-.trajectory-timeline {
-  position: relative;
-  padding-left: 2rem;
-}
-.trajectory-timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 8px;
-  bottom: 8px;
-  width: 1px;
-  background: linear-gradient(to bottom, var(--accent), rgba(255,255,255,0.04));
-}
-.tl-item {
-  position: relative;
-  padding: 0 0 3rem 2.5rem;
-}
-.tl-item:last-child { padding-bottom: 0; }
-.tl-dot {
-  position: absolute;
-  left: -2rem;
-  top: 6px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  border: 1px solid var(--accent);
-  background: var(--bg);
-  transform: translateX(-4px);
-}
-.tl-dot.active { background: var(--accent); }
-.tl-dot.target {
-  background: var(--accent-dim);
-  width: 11px;
-  height: 11px;
-  transform: translateX(-5px);
-}
-.tl-period {
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.35rem;
-}
-.tl-title {
-  font-family: var(--font-head);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.01em;
-  margin-bottom: 0.2rem;
-}
-.tl-inst {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  font-weight: 300;
-  margin-bottom: 0.6rem;
-}
-.tl-desc {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  font-weight: 300;
-  line-height: 1.7;
-  max-width: 520px;
-}
-</style>
