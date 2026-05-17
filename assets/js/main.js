@@ -71,7 +71,8 @@
 
     function showTip(corner, evt) {
       const id = corner.getAttribute('data-project');
-      const data = PROJECTS[id];
+      // Try padded id ('01') then unpadded ('1') as fallback
+      const data = PROJECTS[id] || PROJECTS[String(parseInt(id, 10))];
       if (!data) return;
       tipTag.textContent = data.tag;
       tipTitle.textContent = data.title;
@@ -129,15 +130,13 @@
       c.addEventListener('blur', hideTip);
       c.addEventListener('click', function () {
         const id = c.getAttribute('data-project');
-        const data = PROJECTS[id];
+        const data = PROJECTS[id] || PROJECTS[String(parseInt(id, 10))];
         if (!data) return;
-        // Resolve correct relative URL whether we're at root or inside /projects/
-        const base = document.querySelector('base')
-          ? document.querySelector('base').href
-          : (location.pathname.indexOf('/projects/') !== -1 ? '../projects/' : 'projects/');
-        // Simpler: always link to projects/<slug>.html relative to root via known structure
-        window.location.href = (location.pathname.indexOf('/projects/') !== -1 ? '' : 'projects/')
-          + data.slug + '.html';
+        // Use the href baked into the SVG element by Jekyll
+        const href = c.getAttribute('data-href');
+        if (href) { window.location.href = href; return; }
+        // Fallback to clean permalink
+        window.location.href = '/projects/' + data.slug + '/';
       });
       c.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
