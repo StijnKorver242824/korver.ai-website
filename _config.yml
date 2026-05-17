@@ -1,45 +1,32 @@
-title: Korver AI Solutions
-email: hello@korver.ai
-description: Korver AI Solutions develops purposeful software and research-driven projects at the intersection of technology and real-world impact.
+title: Stijn Korver — F1 Data Engineer
+email: stijn@korver.ai
+description: Portfolio of F1 data engineering projects. Targeting Data Analytics Engineer at Audi Revolut F1 Team.
 baseurl: ""
 url: "https://korver.ai"
-instagram_username: korver.ai
 
 # Collections
 collections:
   projects_en:
     output: true
-    permalink: /en/projects/:name/
-  projects_nl:
-    output: true
-    permalink: /nl/projecten/:name/
+    permalink: /projects/:name/
 
 # Build Settings
 remote_theme: null
 plugins:
   - jekyll-feed
 
-# Language Settings
+# Defaults
 defaults:
   - scope:
-      path: "en"
+      path: ""
     values:
+      layout: default
       lang: en
-  - scope:
-      path: "nl"
-    values:
-      lang: nl
   - scope:
       path: ""
       type: projects_en
     values:
       lang: en
-      layout: project
-  - scope:
-      path: ""
-      type: projects_nl
-    values:
-      lang: nl
       layout: project
 
 # Exclude from Processing

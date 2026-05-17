@@ -1,0 +1,42 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+
+<section class="project-hero" style="padding: 9rem 3rem 4rem;">
+  <div class="project-hero-content">
+    <p class="section-tag">Portfolio</p>
+    <h1>F1 Data Projects</h1>
+    <p style="color: var(--text-secondary); font-weight: 300; font-size: 1rem; line-height: 1.75; max-width: 540px; margin-top: 1rem;">
+      Six projects targeting specific gaps between where I am and where a Data Analytics Engineer at an F1 team needs to be. Built to be used, not just demonstrated.
+    </p>
+  </div>
+</section>
+
+<section class="projects" style="background: var(--bg);">
+  <div class="projects-grid">
+    {% assign f1_projects = site.projects_en | sort: 'order' %}
+    {% for project in f1_projects %}
+    <div class="project-card-wrap reveal">
+      <a href="{{ project.url | relative_url }}" class="project-card">
+        <div class="project-number">{{ forloop.index | prepend: '0' | slice: -2, 2 }} / 06</div>
+        {% if project.banner %}
+          <div class="project-banner">
+            <img src="{{ project.banner | relative_url }}" alt="{{ project.title }}" />
+          </div>
+        {% else %}
+          <div class="project-icon">{{ project.icon }}</div>
+        {% endif %}
+        <h3 class="project-title">{{ project.title }}</h3>
+        <p class="project-desc">{{ project.summary }}</p>
+        <div class="project-tags">
+          {% for tag in project.tags %}
+            <span class="project-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
