@@ -78,16 +78,25 @@
       tipStack.textContent = data.stack;
       tipLabel.textContent = '[ ' + data.thumb + ' ]';
 
-      // Position tooltip near the corner marker (in CSS px relative to host)
-      const cx = parseFloat(corner.getAttribute('data-cx'));
-      const cy = parseFloat(corner.getAttribute('data-cy'));
+      // Position tooltips
       const rect = host.getBoundingClientRect();
-      // Convert svg coordinates to host px
       const svgRect = svg.getBoundingClientRect();
+
+      const tipPositions = {
+        '01': { x: 232,  y: 134  },
+        '02': { x: 1122, y: 435  },
+        '03': { x: 2018, y: 667  },
+        '04': { x: 1324, y: 1823 },
+        '05': { x: 710,  y: 1700 },
+        '06': { x: 91,   y: 852  }
+      };
+
+      const id = corner.getAttribute('data-project');
+      const pos = tipPositions[id] || { x: parseFloat(corner.getAttribute('data-cx')), y: parseFloat(corner.getAttribute('data-cy')) };
       const scaleX = svgRect.width / 2127;
       const scaleY = svgRect.height / 2127;
-      const px = cx * scaleX + (svgRect.left - rect.left);
-      const py = cy * scaleY + (svgRect.top - rect.top);
+      const px = pos.x * scaleX + (svgRect.left - rect.left);
+      const py = pos.y * scaleY + (svgRect.top - rect.top);
 
       // Keep within bounds
       const w = 240;
