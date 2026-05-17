@@ -2,14 +2,14 @@
   <div class="container">
     <header class="section-head">
       <div class="section-tag"><span class="num">/ 02</span><span>Projects</span></div>
-      <h2 class="section-title">One lap. Six corners. Each one a project.</h2>
+      <h2 class="section-title">One lap. Six projects.</h2>
     </header>
 
     <div class="track-wrap">
       <div class="track-toolbar">
         <div class="left">
           <span class="pip">CIRCUIT ZANDVOORT</span>
-          <span>4.259 km · 14 turns · my home track</span>
+          <span>4.259 km · 14 turns</span>
         </div>
         <div class="right"><span>HOVER: PROJECT · CLICK: OPEN</span></div>
       </div>
@@ -28,32 +28,17 @@
 
         <svg class="track-svg" id="track-svg" viewBox="0 0 2127 2127" preserveAspectRatio="xMidYMid meet" aria-label="Circuit Zandvoort with 6 corner-mounted project markers">
           <defs>
-            <pattern id="checker" width="28" height="28" patternUnits="userSpaceOnUse">
-              <rect width="28" height="28" fill="#FFFFFF"/>
-              <rect width="14" height="14" fill="#0A0B0D"/>
-              <rect x="14" y="14" width="14" height="14" fill="#0A0B0D"/>
-            </pattern>
           </defs>
-
-          <g class="startfinish" transform="rotate(58 520 720)">
-            <line x1="430" y1="720" x2="610" y2="720" stroke="url(#checker)" stroke-width="34" />
-            <line x1="430" y1="720" x2="610" y2="720" stroke="var(--text)" stroke-width="2" />
-          </g>
-          <text class="startfinish-label" x="240" y="540" text-anchor="middle">START / FINISH</text>
-
-          <g opacity="0.8" transform="translate(380 1000) rotate(118)">
-            <polygon points="0,-14 28,0 0,14" fill="var(--accent)" />
-          </g>
 
           {% assign sorted = site.projects | sort: 'order' %}
           {% for project in sorted %}
             {% case project.order %}
-              {% when 1 %}{% assign cx = 185 %}{% assign cy = 1565 %}{% assign lx = 80 %}{% assign ly = 1920 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T1' %}
-              {% when 2 %}{% assign cx = 635 %}{% assign cy = 1400 %}{% assign lx = 710 %}{% assign ly = 1700 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T2' %}
-              {% when 3 %}{% assign cx = 790 %}{% assign cy = 200 %}{% assign lx = 1010 %}{% assign ly = 80 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T3' %}
-              {% when 4 %}{% assign cx = 1180 %}{% assign cy = 1060 %}{% assign lx = 1450 %}{% assign ly = 840 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T4' %}
-              {% when 5 %}{% assign cx = 1990 %}{% assign cy = 1180 %}{% assign lx = 2080 %}{% assign ly = 1440 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T5' %}
-              {% when 6 %}{% assign cx = 520 %}{% assign cy = 720 %}{% assign lx = 220 %}{% assign ly = 620 %}{% assign rad = 13 %}{% assign rr = 62 %}{% assign label = 'FIN' %}
+              {% when 1 %}{% assign cx = 852 %}{% assign cy = 222 %}{% assign lx = 80 %}{% assign ly = 1920 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T1' %}
+              {% when 2 %}{% assign cx = 876 %}{% assign cy = 946 %}{% assign lx = 710 %}{% assign ly = 1700 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T2' %}
+              {% when 3 %}{% assign cx = 2047 %}{% assign cy = 1143 %}{% assign lx = 1010 %}{% assign ly = 80 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T3' %}
+              {% when 4 %}{% assign cx = 1364 %}{% assign cy = 1440 %}{% assign lx = 1450 %}{% assign ly = 840 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T4' %}
+              {% when 5 %}{% assign cx = 725 %}{% assign cy = 1250 %}{% assign lx = 2080 %}{% assign ly = 1440 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T5' %}
+              {% when 6 %}{% assign cx = 91 %}{% assign cy = 1535 %}{% assign lx = 220 %}{% assign ly = 620 %}{% assign rad = 13 %}{% assign rr = 62 %}{% assign label = 'FIN' %}
             {% endcase %}
           <g class="corner" data-project="{% if project.order < 10 %}0{% endif %}{{ project.order }}" data-href="{{ project.url | relative_url }}" data-cx="{{ cx }}" data-cy="{{ cy }}" tabindex="0" role="link" aria-label="Project {{ project.order }}, {{ project.title }}">
             <line x1="{{ cx }}" y1="{{ cy }}" x2="{{ lx }}" y2="{{ ly }}" stroke="var(--border-strong)" stroke-width="3" stroke-dasharray="8 8"/>
