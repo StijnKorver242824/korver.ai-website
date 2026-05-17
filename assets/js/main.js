@@ -84,8 +84,8 @@
       const svgRect = svg.getBoundingClientRect();
 
       const tipPositions = {
-        '01': { x:  400, y:    0 },
-        '02': { x: 1600, y:  300 },
+        '01': { x:  550, y:    0 },
+        '02': { x: 1522, y:  300 },
         '03': { x: 2000, y:  600 },
         '04': { x: 1524, y: 1750 },
         '05': { x:  910, y: 1650 },
