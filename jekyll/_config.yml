@@ -1,0 +1,44 @@
+# Site
+title: "Stijn Korver — Trajectory toward F1"
+description: "Portfolio of Stijn Korver, BSc Applied Data Science & AI student on track toward a Formula 1 Data Analytics Engineer role."
+author: "Stijn Korver"
+url: "https://korver.ai"
+baseurl: ""
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+  apps:
+    output: false
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .gitignore
+  - .jekyll-cache

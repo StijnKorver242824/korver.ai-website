@@ -1,0 +1,86 @@
+---
+layout: default
+---
+
+<main data-screen-label="06 Project Detail">
+
+  <section class="proj-hero">
+    <div class="container">
+      <div class="breadcrumb" style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-mute); margin-bottom: 20px;">
+        <a href="{{ '/' | relative_url }}" style="color: var(--text-dim); border-bottom: 1px solid var(--border);">Home</a>
+        <span style="margin: 0 10px;">›</span>
+        <a href="{{ '/projects/' | relative_url }}" style="color: var(--text-dim); border-bottom: 1px solid var(--border);">Projects</a>
+        <span style="margin: 0 10px;">›</span>
+        <span style="color: var(--accent);">{{ page.turn }} — {{ page.short_title | default: page.title }}</span>
+      </div>
+
+      <div class="proj-hero-meta">
+        <span class="accent">{{ page.turn }} · {{ page.corner_name }}</span>
+        <span>{{ page.year }}</span>
+        <span>{{ page.role | upcase }}</span>
+        <span>{{ page.duration | upcase }}</span>
+        {% if page.status %}<span>{{ page.status | upcase }}</span>{% endif %}
+      </div>
+      <h1>{{ page.title }}.</h1>
+      <p class="proj-hero-lede">{{ page.lede }}</p>
+
+      <div class="proj-hero-image">
+        <div class="ph-stripes"></div>
+        <div class="ph-label" style="bottom: 16px; left: 18px;">[ {{ page.hero_caption | default: 'hero image' }} ]</div>
+      </div>
+
+      <div class="proj-stats">
+        {% for stat in page.stats %}
+        <div class="proj-stats-cell">
+          <div class="l">{{ stat.label }}</div>
+          <div class="v">{{ stat.value }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {% if page.app_url %}
+  <section class="proj-cta">
+    <div class="container">
+      <h2>{{ page.cta_heading | default: 'Open the live app.' }}</h2>
+      <div class="proj-cta-actions">
+        <a class="btn btn-primary" href="{{ page.app_url }}" target="_blank" rel="noopener">Open App <span class="arrow">↗</span></a>
+        {% if page.source_url %}<a class="btn" href="{{ page.source_url }}" target="_blank" rel="noopener">Source <span class="arrow">↗</span></a>{% endif %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="case-study">
+    <div class="container">
+      {{ content }}
+    </div>
+  </section>
+
+  <!-- Prev/Next -->
+  {% assign sorted = site.projects | sort: 'order' %}
+  {% for p in sorted %}
+    {% if p.url == page.url %}
+      {% assign idx = forloop.index0 %}
+      {% assign total = forloop.length %}
+    {% endif %}
+  {% endfor %}
+  {% assign prev_idx = idx | minus: 1 %}
+  {% if prev_idx < 0 %}{% assign prev_idx = total | minus: 1 %}{% endif %}
+  {% assign next_idx = idx | plus: 1 %}
+  {% if next_idx >= total %}{% assign next_idx = 0 %}{% endif %}
+  {% assign prev = sorted[prev_idx] %}
+  {% assign next = sorted[next_idx] %}
+
+  <section class="section" style="padding: 56px 0;">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;">
+        <a href="{{ prev.url | relative_url }}" style="color: var(--text-dim);">← {{ prev.turn }} · {{ prev.short_title | default: prev.title }}</a>
+        <a href="{{ '/projects/' | relative_url }}" style="color: var(--accent);">All projects</a>
+        <a href="{{ next.url | relative_url }}" style="color: var(--text-dim);">{{ next.turn }} · {{ next.short_title | default: next.title }} →</a>
+      </div>
+    </div>
+  </section>
+
+</main>

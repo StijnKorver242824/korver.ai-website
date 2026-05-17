@@ -1,0 +1,94 @@
+<section class="section track-section" id="projects" data-screen-label="03 Projects (Track)">
+  <div class="container">
+    <header class="section-head">
+      <div class="section-tag"><span class="num">/ 02</span><span>Projects</span></div>
+      <h2 class="section-title">One lap. Six corners. Each one a project.</h2>
+    </header>
+
+    <div class="track-wrap">
+      <div class="track-toolbar">
+        <div class="left">
+          <span class="pip">CIRCUIT ZANDVOORT</span>
+          <span>4.259 km · 14 turns · my home track</span>
+        </div>
+        <div class="right"><span>HOVER: PROJECT · CLICK: OPEN</span></div>
+      </div>
+
+      <div class="track-svg-wrap zandvoort-mode" id="track-host">
+        <img class="zandvoort-bg" src="{{ '/assets/img/zandvoort.png' | relative_url }}" alt="" aria-hidden="true" />
+
+        <div class="track-tip" id="track-tip" aria-hidden="true">
+          <div class="track-tip-thumb"><div class="ph-stripes"></div><div class="ph-label" id="tip-label">[ thumbnail ]</div></div>
+          <div class="track-tip-body">
+            <div class="track-tip-tag" id="tip-tag">T1 · CORNER 1</div>
+            <h4 class="track-tip-title" id="tip-title">Project title</h4>
+            <div class="track-tip-meta"><span id="tip-stack">PYTHON · ML</span><span id="tip-status">→ OPEN</span></div>
+          </div>
+        </div>
+
+        <svg class="track-svg" id="track-svg" viewBox="0 0 2127 2127" preserveAspectRatio="xMidYMid meet" aria-label="Circuit Zandvoort with 6 corner-mounted project markers">
+          <defs>
+            <pattern id="checker" width="28" height="28" patternUnits="userSpaceOnUse">
+              <rect width="28" height="28" fill="#FFFFFF"/>
+              <rect width="14" height="14" fill="#0A0B0D"/>
+              <rect x="14" y="14" width="14" height="14" fill="#0A0B0D"/>
+            </pattern>
+          </defs>
+
+          <g class="startfinish" transform="rotate(58 520 720)">
+            <line x1="430" y1="720" x2="610" y2="720" stroke="url(#checker)" stroke-width="34" />
+            <line x1="430" y1="720" x2="610" y2="720" stroke="var(--text)" stroke-width="2" />
+          </g>
+          <text class="startfinish-label" x="240" y="540" text-anchor="middle">START / FINISH</text>
+
+          <g opacity="0.8" transform="translate(380 1000) rotate(118)">
+            <polygon points="0,-14 28,0 0,14" fill="var(--accent)" />
+          </g>
+
+          {% assign sorted = site.projects | sort: 'order' %}
+          {% for project in sorted %}
+            {% case project.order %}
+              {% when 1 %}{% assign cx = 185 %}{% assign cy = 1565 %}{% assign lx = 80 %}{% assign ly = 1920 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T1' %}
+              {% when 2 %}{% assign cx = 635 %}{% assign cy = 1400 %}{% assign lx = 710 %}{% assign ly = 1700 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T2' %}
+              {% when 3 %}{% assign cx = 790 %}{% assign cy = 200 %}{% assign lx = 1010 %}{% assign ly = 80 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T3' %}
+              {% when 4 %}{% assign cx = 1180 %}{% assign cy = 1060 %}{% assign lx = 1450 %}{% assign ly = 840 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T4' %}
+              {% when 5 %}{% assign cx = 1990 %}{% assign cy = 1180 %}{% assign lx = 2080 %}{% assign ly = 1440 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T5' %}
+              {% when 6 %}{% assign cx = 520 %}{% assign cy = 720 %}{% assign lx = 220 %}{% assign ly = 620 %}{% assign rad = 13 %}{% assign rr = 62 %}{% assign label = 'FIN' %}
+            {% endcase %}
+          <g class="corner" data-project="{% if project.order < 10 %}0{% endif %}{{ project.order }}" data-href="{{ project.url | relative_url }}" data-cx="{{ cx }}" data-cy="{{ cy }}" tabindex="0" role="link" aria-label="Project {{ project.order }}, {{ project.title }}">
+            <line x1="{{ cx }}" y1="{{ cy }}" x2="{{ lx }}" y2="{{ ly }}" stroke="var(--border-strong)" stroke-width="3" stroke-dasharray="8 8"/>
+            <circle class="corner-hit" cx="{{ cx }}" cy="{{ cy }}" r="100"/>
+            <circle class="corner-dot" cx="{{ cx }}" cy="{{ cy }}" r="{{ rad }}"/>
+            <circle class="corner-ring" cx="{{ lx }}" cy="{{ ly }}" r="{{ rr }}"/>
+            <text class="corner-label" x="{{ lx }}" y="{{ ly }}">{{ label }}</text>
+          </g>
+          {% endfor %}
+        </svg>
+      </div>
+
+      <div class="track-cta">
+        <div class="track-legend">
+          <span>● CORNER · PROJECT</span>
+          <span>▮▮ START / FINISH</span>
+          <span>▸ DIRECTION</span>
+        </div>
+        <a class="btn btn-primary" href="{{ '/projects/' | relative_url }}">All projects <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.SK_PROJECTS = window.SK_PROJECTS || {
+    {% for project in sorted %}
+      "{% if project.order < 10 %}0{% endif %}{{ project.order }}": {
+        slug: "{{ project.slug }}",
+        title: {{ project.title | jsonify }},
+        tag: "{{ project.turn }} · {{ project.corner_name }}",
+        stack: {{ project.stack | jsonify }},
+        thumb: {{ project.thumb | jsonify }},
+        href: "{{ project.url | relative_url }}"
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  };
+</script>
