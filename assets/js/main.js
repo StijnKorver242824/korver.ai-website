@@ -84,8 +84,8 @@
       const rect = host.getBoundingClientRect();
       // Convert svg coordinates to host px
       const svgRect = svg.getBoundingClientRect();
-      const scaleX = svgRect.width / 1200;
-      const scaleY = svgRect.height / 620;
+      const scaleX = svgRect.width / 2127;
+      const scaleY = svgRect.height / 2127;
       const px = cx * scaleX + (svgRect.left - rect.left);
       const py = cy * scaleY + (svgRect.top - rect.top);
 
