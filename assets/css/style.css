@@ -13,8 +13,8 @@
   --border:         rgba(255,255,255,0.07);
   --border-hover:   rgba(255,255,255,0.14);
   --text-primary:   #F0EEE8;
-  --text-secondary: #8A8880;
-  --text-muted:     #4A4845;
+  --text-secondary: #F0EEE8;
+  --text-muted:     #8A8880;
   --accent:         #E8D5A3;
   --accent-dark:    #C8B47A;
   --accent-dim:     rgba(232,213,163,0.15);
@@ -472,7 +472,7 @@ h2 em { font-style: normal; color: var(--accent); }
   margin-bottom: 1.25rem;
 }
 .about-text p:last-child { margin-bottom: 0; }
-.about-text strong { color: var(--text-primary); font-weight: 400; }
+.about-text strong { color: var(--accent); font-weight: 400; }
 
 .skills-grid {
   display: flex;
