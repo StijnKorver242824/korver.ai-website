@@ -1,6 +1,6 @@
 ---
 order: 1
-turn: T1
+turn: P1
 corner_name: "CORNER 1"
 slug: telemetry-dashboard
 short_title: "Telemetry Dashboard"
@@ -8,7 +8,7 @@ title: "Interactive Telemetry Dashboard"
 year: 2025
 role: "Solo build"
 duration: "3 weeks"
-status: "Live"
+status: "Building"
 stack: "PYTHON · STREAMLIT · FASTF1"
 thumb: "TELEMETRY · DASHBOARD"
 description: "Live FastF1 telemetry visualised through an interactive Streamlit dashboard."

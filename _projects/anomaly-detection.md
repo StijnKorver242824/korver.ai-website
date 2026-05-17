@@ -1,6 +1,6 @@
 ---
 order: 2
-turn: T2
+turn: P2
 corner_name: "CORNER 2"
 slug: anomaly-detection
 short_title: "Anomaly Detection"
@@ -8,7 +8,7 @@ title: "Telemetry Anomaly Detection"
 year: 2025
 role: "Solo build"
 duration: "4 weeks"
-status: "Live"
+status: "Planned"
 stack: "PYTORCH · SKLEARN"
 thumb: "ANOMALY · DETECTION"
 description: "Streaming anomaly detector for telemetry channels."

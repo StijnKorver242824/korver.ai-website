@@ -1,6 +1,6 @@
 ---
 order: 6
-turn: FIN
+turn: P6
 corner_name: "FINISH LINE"
 slug: race-strategy-simulator
 short_title: "Strategy Sim"
@@ -8,7 +8,7 @@ title: "Race Strategy Simulator"
 year: 2025
 role: "Solo build"
 duration: "8 weeks"
-status: "Live"
+status: "Planned"
 stack: "MONTE CARLO · OPT."
 thumb: "STRATEGY · SIMULATOR"
 description: "Monte Carlo race strategy engine with tyre deg, undercut/overcut, safety car probability."

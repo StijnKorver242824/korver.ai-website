@@ -1,6 +1,6 @@
 ---
 order: 3
-turn: T3
+turn: P3
 corner_name: "CORNER 3"
 slug: race-report-generator
 short_title: "Race Report"
@@ -8,7 +8,7 @@ title: "Post-Race Performance Report Generator"
 year: 2025
 role: "Solo build"
 duration: "2 weeks"
-status: "In progress"
+status: "Planned"
 stack: "LLM · JINJA · PLOTLY"
 thumb: "REPORT · GENERATOR"
 description: "Auto-generates a post-race performance brief as a multi-page PDF."

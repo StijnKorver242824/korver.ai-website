@@ -1,14 +1,14 @@
 ---
 order: 4
-turn: T4
+turn: P4
 corner_name: "CORNER 4"
 slug: lap-time-prediction
-short_title: "Lap Time Δ"
+short_title: "Lap Time"
 title: "Lap Time Delta Prediction"
 year: 2025
 role: "Solo build"
 duration: "5 weeks"
-status: "Live"
+status: "Planned"
 stack: "XGBOOST · SHAP"
 thumb: "LAP TIME · DELTA"
 description: "Predicts the lap-time delta vs reference using gradient boosting + SHAP."

@@ -1,6 +1,6 @@
 ---
 order: 5
-turn: T5
+turn: P5
 corner_name: "CORNER 5"
 slug: incident-recognition
 short_title: "Incident Scope"
@@ -8,7 +8,7 @@ title: "Incident Recognition"
 year: 2025
 role: "Solo build"
 duration: "6 weeks"
-status: "Prototype"
+status: "Planned"
 stack: "CV · YOLO · LSTM"
 thumb: "INCIDENT · RECOGNITION"
 description: "Classifies on-track incidents from broadcast video + timing data."
