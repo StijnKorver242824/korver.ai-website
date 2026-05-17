@@ -33,12 +33,12 @@
           {% assign sorted = site.projects | sort: 'order' %}
           {% for project in sorted %}
             {% case project.order %}
-              {% when 1 %}{% assign cx = 852 %}{% assign cy = 222 %}{% assign lx = 80 %}{% assign ly = 1920 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T1' %}
-              {% when 2 %}{% assign cx = 876 %}{% assign cy = 946 %}{% assign lx = 710 %}{% assign ly = 1700 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T2' %}
-              {% when 3 %}{% assign cx = 2047 %}{% assign cy = 1143 %}{% assign lx = 1010 %}{% assign ly = 80 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T3' %}
-              {% when 4 %}{% assign cx = 1364 %}{% assign cy = 1440 %}{% assign lx = 1450 %}{% assign ly = 840 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T4' %}
-              {% when 5 %}{% assign cx = 725 %}{% assign cy = 1250 %}{% assign lx = 2080 %}{% assign ly = 1440 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'T5' %}
-              {% when 6 %}{% assign cx = 91 %}{% assign cy = 1535 %}{% assign lx = 220 %}{% assign ly = 620 %}{% assign rad = 13 %}{% assign rr = 62 %}{% assign label = 'FIN' %}
+              {% when 1 %}{% assign cx =  852 %}{% assign cy =  222 %}{% assign lx =  232 %}{% assign ly =  134 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'P1' %}
+              {% when 2 %}{% assign cx =  876 %}{% assign cy =  946 %}{% assign lx = 1122 %}{% assign ly =  435 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'P2' %}
+              {% when 3 %}{% assign cx = 2047 %}{% assign cy = 1143 %}{% assign lx = 2018 %}{% assign ly =  667 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'P3' %}
+              {% when 4 %}{% assign cx = 1364 %}{% assign cy = 1440 %}{% assign lx = 1324 %}{% assign ly = 1823 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'P4' %}
+              {% when 5 %}{% assign cx =  725 %}{% assign cy = 1250 %}{% assign lx =  710 %}{% assign ly = 1700 %}{% assign rad = 10 %}{% assign rr = 58 %}{% assign label = 'P5' %}
+              {% when 6 %}{% assign cx =   91 %}{% assign cy = 1535 %}{% assign lx =   91 %}{% assign ly =  852 %}{% assign rad = 13 %}{% assign rr = 62 %}{% assign label = 'P6' %}
             {% endcase %}
           <g class="corner" data-project="{% if project.order < 10 %}0{% endif %}{{ project.order }}" data-href="{{ project.url | relative_url }}" data-cx="{{ cx }}" data-cy="{{ cy }}" tabindex="0" role="link" aria-label="Project {{ project.order }}, {{ project.title }}">
             <line x1="{{ cx }}" y1="{{ cy }}" x2="{{ lx }}" y2="{{ ly }}" stroke="var(--border-strong)" stroke-width="3" stroke-dasharray="8 8"/>
@@ -54,8 +54,6 @@
       <div class="track-cta">
         <div class="track-legend">
           <span>● CORNER · PROJECT</span>
-          <span>▮▮ START / FINISH</span>
-          <span>▸ DIRECTION</span>
         </div>
         <a class="btn btn-primary" href="{{ '/projects/' | relative_url }}">All projects <span class="arrow">→</span></a>
       </div>
