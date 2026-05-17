@@ -16,7 +16,7 @@ permalink: /
   <p class="hero-desc">
     Applied Data Science & AI student at Breda University of Applied Sciences.
     Building F1-specific analytics infrastructure — from live telemetry pipelines
-    to race strategy simulators. Targeting Audi F1.
+    to race strategy simulators. Targeting F1.
   </p>
 
   <div class="hero-actions">
@@ -92,7 +92,7 @@ permalink: /
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-label fade-up">Projects</div>
-  <h2 class="fade-up">F1 data<br>portfolio.</h2>
+  <h2 class="fade-up">F1 Data<br>Portfolio</h2>
   <p class="section-intro fade-up">
     Six projects, each targeting a specific gap between where I am and
     where a Data Analytics Engineer at an F1 team needs to be.
@@ -105,11 +105,12 @@ permalink: /
     <div class="project-card fade-up">
       <span class="project-number">01 / 06</span>
       <span class="project-status status-building">Building</span>
-      <h3 class="project-title">Telemetry Anomaly Detection</h3>
+      <h3 class="project-title">Interactive Telemetry Dashboard</h3>
       <p class="project-desc">
-        Multi-channel anomaly scoring across 250+ sensor channels — speed, throttle, brake pressure,
-        tyre temperatures — surfacing statistically significant deviations that flag mechanical events,
-        driving inconsistencies, or setup issues in real time.
+        A web-based telemetry explorer allowing engineers to load, compare,
+        and interrogate real F1 session data interactively. Built on a Python
+        FastAPI backend serving FastF1 data, with a TypeScript/React frontend
+        rendering the visualisations.
       </p>
       <div class="project-stack">
         <span class="stack-tag">FastF1</span>
@@ -124,11 +125,12 @@ permalink: /
     <div class="project-card fade-up" style="transition-delay: 0.05s;">
       <span class="project-number">02 / 06</span>
       <span class="project-status status-planned">Planned</span>
-      <h3 class="project-title">Interactive Telemetry Dashboard</h3>
+      <h3 class="project-title">Telemetry Anomaly Detection</h3>
       <p class="project-desc">
-        Web-based telemetry explorer with lap comparison, sector heatmaps, tyre compound filtering,
-        and driver head-to-head views. FastAPI backend serving FastF1 data with a TypeScript/React
-        frontend — the closest thing to what engineers actually use trackside.
+        A system that ingests multi-channel telemetry data — speed, throttle,
+        brake pressure, g-forces, tyre temperatures, sector times — and surfaces
+        statistically anomalous behaviour that could indicate mechanical events,
+        driving errors, or setup issues, displayed on a monitoring dashboard.
       </p>
       <div class="project-stack">
         <span class="stack-tag">FastF1</span>
@@ -145,9 +147,9 @@ permalink: /
       <span class="project-status status-planned">Planned</span>
       <h3 class="project-title">Post-Race Report Generator</h3>
       <p class="project-desc">
-        Automated pipeline that ingests each Grand Prix weekend's data via FastF1 and produces
-        a structured PDF report — pace analysis, tyre degradation curves, undercut/overcut
-        modelling, weather correlation. Published every race weekend via GitHub Actions.
+        A pipeline that automatically ingests the previous race's data via FastF1
+        after each Grand Prix weekend and produces a structured, visually rich PDF
+        report — the kind a performance engineer reads on Monday morning.
       </p>
       <div class="project-stack">
         <span class="stack-tag">FastF1</span>
@@ -164,9 +166,10 @@ permalink: /
       <span class="project-status status-planned">Planned</span>
       <h3 class="project-title">Lap Time Delta Predictor</h3>
       <p class="project-desc">
-        Predictive model for tyre degradation as a function of compound, age, fuel load, track
-        temperature, and circuit characteristics — wrapped in an engineer-facing dashboard where
-        strategists simulate pit windows with uncertainty bounds and SHAP explainability.
+        A predictive model for lap time degradation as a function of tyre compound,
+        tyre age, fuel load estimate, track temperature, and circuit characteristics
+        — paired with an interactive dashboard through which an engineer can interrogate
+        predictions for upcoming stints.
       </p>
       <div class="project-stack">
         <span class="stack-tag">XGBoost</span>
@@ -181,7 +184,7 @@ permalink: /
     <div class="project-card fade-up" style="transition-delay: 0.1s;">
       <span class="project-number">05 / 06</span>
       <span class="project-status status-planned">Planned</span>
-      <h3 class="project-title">RaceCTRL — Incident Detection</h3>
+      <h3 class="project-title">Incident Detection</h3>
       <p class="project-desc">
         Complete rebuild of a motorsport incident classifier — EfficientNet-B3 replacing a
         custom CNN, 1000+ image dataset replacing 200, Grad-CAM validation baked into training
@@ -201,11 +204,11 @@ permalink: /
     <div class="project-card fade-up" style="transition-delay: 0.15s;">
       <span class="project-number">06 / 06</span>
       <span class="project-status status-planned">Planned</span>
-      <h3 class="project-title">Race Strategy RL Simulator</h3>
+      <h3 class="project-title">Race Strategy Simulator</h3>
       <p class="project-desc">
-        Custom Gymnasium environment modelling pit stop timing, tyre selection, and safety car
-        response. PPO agent trained against calibrated rule-based opponents — degradation parameters
-        grounded in real FastF1 data. Multi-agent component directly mirrors the internship specification.
+        A simplified F1 race strategy environment modelling pit stop timing, tyre selection,
+        and safety car response — with a reinforcement learning agent trained to optimise
+        finishing position against rule-based opponent cars.
       </p>
       <div class="project-stack">
         <span class="stack-tag">Gymnasium</span>
@@ -222,7 +225,7 @@ permalink: /
 <!-- TRAJECTORY -->
 <section id="trajectory">
   <div class="section-label fade-up">Trajectory</div>
-  <h2 class="fade-up">The path<br>to Audi F1.</h2>
+  <h2 class="fade-up">The path to<br>Formula One</h2>
   <p class="section-intro fade-up">
     Each step adds something the previous one lacked.
     The cumulative profile by the time of full-time application will be formidable.
@@ -232,8 +235,8 @@ permalink: /
 
     <div class="timeline-item">
       <div class="timeline-dot active"></div>
-      <div class="timeline-period">2024 — 2026</div>
-      <div class="timeline-title">BSc Applied Data Science & AI</div>
+      <div class="timeline-period">2024 — 2028</div>
+      <div class="timeline-title">BSc Applied Data Science & Artificial Intelligence</div>
       <div class="timeline-inst">Breda University of Applied Sciences</div>
       <div class="timeline-desc">
         Full-stack AI portfolio: U-Net segmentation + physical RL robotics, CI/CD deployment,
@@ -244,7 +247,7 @@ permalink: /
 
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-period">Summer 2026</div>
+      <div class="timeline-period">July 2027</div>
       <div class="timeline-title">Introduction to Motorsport Engineering</div>
       <div class="timeline-inst">Cranfield University</div>
       <div class="timeline-desc">
@@ -255,19 +258,9 @@ permalink: /
 
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-period">Summer 2026</div>
-      <div class="timeline-title">Blended Intensive Programme</div>
-      <div class="timeline-inst">SRH Heidelberg</div>
-      <div class="timeline-desc">
-        Real-time computer vision, LLM-guided systems, edge AI deployment.
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-period">2027 — 2028</div>
-      <div class="timeline-title">Premaster + MSc Data Science in Business & Entrepreneurship</div>
-      <div class="timeline-inst">JADS — TU/e + Tilburg University</div>
+      <div class="timeline-period">2028 — 2030</div>
+      <div class="timeline-title">MSc Data Science in Business & Entrepreneurship</div>
+      <div class="timeline-inst">Jheronimus Academy of Data Science</div>
       <div class="timeline-desc">
         Algorithms, ML theory, advanced statistics, databases.
         Full data science cycle with legal and societal context.
@@ -277,9 +270,9 @@ permalink: /
 
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-period">Target: 2028</div>
-      <div class="timeline-title">Data Analytics Engineer — Audi F1</div>
-      <div class="timeline-inst">Audi Revolut F1 Team</div>
+      <div class="timeline-period">Target: 2030</div>
+      <div class="timeline-title">Data Analytics Engineer</div>
+      <div class="timeline-inst">Formula One</div>
       <div class="timeline-desc">
         Building the analytical infrastructure race engineers rely on.
         Trackside, under pressure, on race weekends.
@@ -294,16 +287,15 @@ permalink: /
   <div class="section-label" style="justify-content: center;">Contact</div>
   <h2>Let's talk<br><em>data.</em></h2>
   <p>
-    Currently looking for F1 data internship opportunities from 2026.
-    If you're working in motorsport data — or if you're Davide Marinaro — I'd
-    genuinely love to hear what skills matter most in your role.
+    Currently looking for motorsport data internship opportunities from February 2028.
+    If you're working in motorsport data, I'd genuinely love to hear what skills matter most in your role.
   </p>
 
   <div class="contact-links">
-    <a href="https://www.linkedin.com/in/stijnkorver" target="_blank" class="contact-link primary">
+    <a href="https://www.linkedin.com/in/stijnkorver/" target="_blank" class="contact-link primary">
       LinkedIn ↗
     </a>
-    <a href="https://github.com/stijnkorver" target="_blank" class="contact-link">
+    <a href="https://github.com/stijn-korver/" target="_blank" class="contact-link">
       GitHub
     </a>
     <a href="mailto:stijn@korver.ai" class="contact-link">
