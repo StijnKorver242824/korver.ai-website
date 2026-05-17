@@ -84,12 +84,12 @@
       const svgRect = svg.getBoundingClientRect();
 
       const tipPositions = {
-        '01': { x: 232,  y: 134  },
-        '02': { x: 1122, y: 435  },
-        '03': { x: 2018, y: 667  },
-        '04': { x: 1324, y: 1823 },
-        '05': { x: 710,  y: 1700 },
-        '06': { x: 91,   y: 852  }
+        '01': { x:  132, y:  100 },
+        '02': { x: 1322, y:  400 },
+        '03': { x: 2000, y:  600 },
+        '04': { x: 1424, y: 1750 },
+        '05': { x:  910, y: 1650 },
+        '06': { x:   91, y:  800 }
       };
 
       const pos = tipPositions[id] || { x: parseFloat(corner.getAttribute('data-cx')), y: parseFloat(corner.getAttribute('data-cy')) };
@@ -132,11 +132,7 @@
         const id = c.getAttribute('data-project');
         const data = PROJECTS[id] || PROJECTS[String(parseInt(id, 10))];
         if (!data) return;
-        // Use the href baked into the SVG element by Jekyll
-        const href = c.getAttribute('data-href');
-        if (href) { window.location.href = href; return; }
-        // Fallback to clean permalink
-        window.location.href = '/projects/' + data.slug + '/';
+        window.location.href = c.getAttribute('data-href');
       });
       c.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
