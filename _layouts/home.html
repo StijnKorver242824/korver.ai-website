@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-eyebrow">{{ page.eyebrow | default: "Data Science & Machine Learning" }}</p>
+      <h1 class="hero-title">{{ page.hero_title | default: site.title }}</h1>
+      <p class="hero-subtitle">{{ page.hero_subtitle | default: site.description }}</p>
+      <div class="hero-actions">
+        <a href="{{ '/projects/' | relative_url }}" class="btn btn-primary">View my projects</a>
+        <a href="{{ '/about/' | relative_url }}" class="btn btn-ghost">About me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if content != "" %}
+<section class="page-content">
+  <div class="container container--narrow">
+    {{ content }}
+  </div>
+</section>
+{% endif %}
+
+<section class="projects-section" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Projects</h2>
+      <a href="{{ '/projects/' | relative_url }}" class="section-link">View all →</a>
+    </div>
+
+    <div class="project-grid">
+      {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+      {% for project in sorted_projects limit: 6 %}
+      <article class="project-card">
+        {% if project.thumbnail %}
+        <div class="card-thumbnail">
+          <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }} thumbnail" loading="lazy">
+        </div>
+        {% else %}
+        <div class="card-thumbnail card-thumbnail--placeholder" aria-hidden="true"></div>
+        {% endif %}
+
+        <div class="card-body">
+          <h3 class="card-title">
+            <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+          </h3>
+
+          <p class="card-excerpt">{{ project.excerpt | default: project.content | strip_html | truncatewords: 28 }}</p>
+
+          {% if project.tags %}
+          <div class="card-tags" aria-label="Tags">
+            {% for tag in project.tags limit: 4 %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <div class="card-links">
+            <a href="{{ project.url | relative_url }}" class="btn btn-secondary btn-sm">Read more</a>
+            {% if project.app_url %}
+            <a href="{{ project.app_url }}" class="btn btn-primary btn-sm" {% unless project.app_url contains '/' %}target="_blank" rel="noopener noreferrer"{% endunless %}>
+              Live demo →
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

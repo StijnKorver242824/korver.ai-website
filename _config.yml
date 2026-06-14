@@ -1,28 +1,35 @@
-# Site
-title: "Stijn Korver — Trajectory toward F1"
-description: "Portfolio of Stijn Korver, BSc Applied Data Science & AI student on track toward a Formula 1 Data Analytics Engineer role."
-author: "Stijn Korver"
+title: "Korver.ai"
+tagline: "Data Science & Machine Learning"
+description: "BSc portfolio showcasing projects in computer vision, NLP, MLOps and classical machine learning."
 url: "https://korver.ai"
 baseurl: ""
 
-# Build
+author:
+  name: "Korver"
+  email: ""
+
+github_username: ""
+linkedin_url: ""
+
+# Build settings
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # Collections
 collections:
   projects:
     output: true
-    permalink: /projects/:path/
+    permalink: /project/:name/
   apps:
-    output: false
+    output: true
+    permalink: /app/:name/
 
-# Defaults
+# Default layouts
 defaults:
   - scope:
       path: ""
@@ -31,14 +38,26 @@ defaults:
       layout: "project"
   - scope:
       path: ""
+      type: "apps"
     values:
-      layout: "default"
+      layout: "app"
+
+# Plugins (all GitHub Pages safe)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
 
 # Exclude from build
 exclude:
-  - README.md
   - Gemfile
   - Gemfile.lock
-  - vendor
-  - .gitignore
-  - .jekyll-cache
+  - README.md
+  - vendor/
+  - node_modules/
+  - .sass-cache/

@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<div class="app-page">
+
+  <header class="app-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        {% if page.project_url %}
+        <a href="{{ page.project_url | relative_url }}">← Back to project</a>
+        {% else %}
+        <a href="{{ '/projects/' | relative_url }}">← All projects</a>
+        {% endif %}
+      </nav>
+
+      <h1>{{ page.title }}</h1>
+
+      {% if page.description %}
+      <p class="app-description">{{ page.description }}</p>
+      {% endif %}
+
+      {% if page.github_url %}
+      <a href="{{ page.github_url }}" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer">
+        View source on GitHub
+      </a>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if page.embed_url %}
+  <div class="app-embed-wrapper">
+    <iframe
+      src="{{ page.embed_url }}"
+      title="{{ page.title }} demo"
+      frameborder="0"
+      allow="accelerometer; camera; microphone"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+  {% else %}
+  <div class="app-placeholder">
+    <div class="container">
+      <div class="placeholder-inner">
+        <p class="placeholder-icon" aria-hidden="true">🚧</p>
+        <h2>Demo coming soon</h2>
+        <p>This project is currently being prepared for deployment. Check back shortly.</p>
+        {% if page.project_url %}
+        <a href="{{ page.project_url | relative_url }}" class="btn btn-primary">Read about the project</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if content != "" %}
+  <div class="app-notes">
+    <div class="container container--narrow">
+      <h2>How to use</h2>
+      {{ content }}
+    </div>
+  </div>
+  {% endif %}
+
+</div>

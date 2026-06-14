@@ -1,0 +1,305 @@
+// ─── Buttons ──────────────────────────────────────────────────────────────────
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 1.3rem;
+  border-radius: $radius;
+  font-family: $font-base;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s;
+  white-space: nowrap;
+
+  &:focus-visible {
+    outline: 2px solid $c-accent;
+    outline-offset: 3px;
+  }
+
+  &:active { transform: scale(0.97); }
+}
+
+// Green fill — primary CTA
+.btn-primary {
+  background: $c-accent;
+  color: $c-text-on-dark;
+  border-color: $c-accent;
+
+  &:hover {
+    background: $c-accent-dark;
+    border-color: $c-accent-dark;
+    color: $c-text-on-dark;
+  }
+}
+
+// Outlined dark — secondary
+.btn-secondary {
+  background: transparent;
+  color: $c-secondary;
+  border-color: $c-secondary;
+
+  &:hover {
+    background: $c-secondary;
+    color: $c-text-on-dark;
+  }
+}
+
+// Ghost — minimal, on light bg
+.btn-ghost {
+  background: transparent;
+  color: $c-text-muted;
+  border-color: $c-border-mid;
+
+  &:hover {
+    background: $c-dominant-mid;
+    color: $c-secondary;
+    border-color: $c-border-mid;
+  }
+}
+
+// Outlined light — for use on dark (header) surfaces
+.btn-outline-light {
+  background: transparent;
+  color: rgba($c-text-on-dark, 0.85);
+  border-color: rgba($c-text-on-dark, 0.45);
+
+  &:hover {
+    background: rgba($c-text-on-dark, 0.1);
+    color: $c-text-on-dark;
+    border-color: rgba($c-text-on-dark, 0.7);
+  }
+}
+
+.btn-lg {
+  padding: 0.7rem 1.75rem;
+  font-size: 1rem;
+}
+
+.btn-sm {
+  padding: 0.38rem 0.9rem;
+  font-size: $fs-sm;
+}
+
+// ─── Tags ─────────────────────────────────────────────────────────────────────
+.tag {
+  display: inline-block;
+  background: $c-accent-faint;
+  color: darken($c-accent, 12%);
+  font-size: $fs-xs;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba($c-accent, 0.2);
+}
+
+.tech-badge {
+  display: inline-block;
+  background: rgba($c-secondary, 0.07);
+  color: $c-secondary;
+  font-size: $fs-xs;
+  font-weight: 700;
+  padding: 4px 11px;
+  border-radius: $radius;
+  border: 1px solid $c-border;
+}
+
+// ─── Hero ─────────────────────────────────────────────────────────────────────
+.hero {
+  background-color: $c-dominant;
+  border-bottom: 3px solid $c-accent;
+  padding: 5rem 0 4.5rem;
+}
+
+.hero-eyebrow {
+  font-size: $fs-sm;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $c-accent-dark;
+  margin-bottom: 0.75rem;
+}
+
+.hero-title {
+  font-size: clamp(2.1rem, 5vw, 3.5rem);
+  color: $c-secondary;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  max-width: 700px;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: $c-text-muted;
+  max-width: 560px;
+  line-height: 1.65;
+  margin-bottom: 2.25rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+// ─── Section chrome ───────────────────────────────────────────────────────────
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: $sp-md;
+  border-bottom: 2px solid $c-border;
+  padding-bottom: 0.75rem;
+  gap: $sp-sm;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.section-link {
+  font-size: $fs-sm;
+  font-weight: 700;
+  color: $c-accent-dark;
+  text-decoration: none;
+  flex-shrink: 0;
+
+  &:hover { color: $c-secondary; }
+}
+
+.projects-section {
+  padding: $sp-xl 0;
+}
+
+// ─── Project grid & cards ─────────────────────────────────────────────────────
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: $sp-md;
+}
+
+.project-card {
+  background: $c-white;
+  border-radius: $radius-lg;
+  border: 1px solid $c-border;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+
+  // Accent bar at top of every card
+  border-top: 3px solid $c-accent;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-3px);
+  }
+}
+
+.card-thumbnail {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: $c-dominant-mid;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  &--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, $c-dominant-mid 0%, darken($c-dominant-mid, 4%) 100%);
+  }
+}
+
+.project-card:hover .card-thumbnail img {
+  transform: scale(1.03);
+}
+
+.card-body {
+  padding: 1.2rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  margin-bottom: 0.55rem;
+  line-height: 1.3;
+
+  a {
+    color: $c-secondary;
+    text-decoration: none;
+
+    &:hover { color: $c-accent-dark; }
+  }
+}
+
+.card-excerpt {
+  font-size: $fs-sm;
+  color: $c-text-muted;
+  line-height: 1.58;
+  margin-bottom: $sp-sm;
+  flex: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1.1rem;
+}
+
+.card-links {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+// ─── Projects listing page ────────────────────────────────────────────────────
+.projects-page {
+  padding: $sp-xl 0;
+}
+
+.projects-page .page-intro {
+  max-width: $w-narrow;
+  margin-bottom: $sp-lg;
+
+  h1 { margin-bottom: 0.5rem; }
+  p { color: $c-text-muted; font-size: 1.05rem; }
+}
+
+// ─── Generic content page ─────────────────────────────────────────────────────
+.content-page {
+  padding: $sp-xl 0;
+}
+
+.content-page .page-header {
+  margin-bottom: $sp-lg;
+  padding-bottom: $sp-sm;
+  border-bottom: 2px solid $c-border;
+
+  h1 { margin-bottom: 0.4rem; }
+  .page-subtitle {
+    font-size: 1.1rem;
+    color: $c-text-muted;
+    margin: 0;
+  }
+}
+
+// ─── Responsive ───────────────────────────────────────────────────────────────
+@media (max-width: $bp-sm) {
+  .hero { padding: 3rem 0 3rem; }
+  .hero-actions { flex-direction: column; }
+  .project-grid { grid-template-columns: 1fr; }
+}

@@ -1,15 +1,31 @@
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-grid">
-      <h2 class="footer-big">Want to talk telemetry?<br /><a href="mailto:stijn@korver.ai">stijn@korver.ai</a></h2>
-      <div class="footer-meta">
-        <div>OUT-LAP COMPLETE</div>
-        <div>S-HERTOGENBOSCH, NL</div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="{{ '/' | relative_url }}" class="footer-logo">{{ site.title }}</a>
+        <p>{{ site.tagline }}</p>
       </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/projects/' | relative_url }}">Projects</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+      </nav>
+
+      {% if site.github_username or site.linkedin_url %}
+      <div class="footer-social">
+        {% if site.github_username %}
+        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        {% endif %}
+        {% if site.linkedin_url %}
+        <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        {% endif %}
+      </div>
+      {% endif %}
     </div>
-    <div class="footer-bottom">
-      <span>© {{ 'now' | date: '%Y' }} Stijn Korver — All rights reserved</span>
-      <span>Built with Jekyll · hosted on GitHub Pages</span>
-    </div>
+
+    <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} {{ site.author.name | default: site.title }}. All rights reserved.</p>
   </div>
 </footer>
+
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>

@@ -1,0 +1,53 @@
+// ─── Color tokens (60-30-10 rule) ────────────────────────────────────────────
+$c-dominant:   #effbef;   // 60% — page backgrounds, card surfaces
+$c-secondary:  #145214;   // 30% — navigation, headings, structural chrome
+$c-accent:     #08a508;   // 10% — CTAs, buttons, active states, highlights
+
+// Derived
+$c-dominant-mid:   #dff4df;  // slightly deeper tint for section alternation
+$c-secondary-dark: #0e3b0e;  // hover/active darkening of nav
+$c-accent-dark:    #067306;  // button hover
+$c-accent-faint:   rgba($c-accent, 0.10); // soft fill for tags/badges
+
+// Text
+$c-text:       #1c2b1c;   // body copy — very dark green-gray, not pure black
+$c-text-muted: #4e6550;   // secondary text, captions, meta
+$c-text-on-dark: #ffffff; // text on $c-secondary surfaces
+
+// Neutral surfaces
+$c-white:      #ffffff;
+$c-border:     rgba($c-secondary, 0.12);
+$c-border-mid: rgba($c-secondary, 0.22);
+
+// ─── Typography ───────────────────────────────────────────────────────────────
+// Calibri is a system font on Windows & macOS; fallbacks cover Linux and edge cases.
+$font-base: Calibri, 'Gill Sans', 'Gill Sans MT', Candara, Corbel, 'Segoe UI', Arial, sans-serif;
+$font-mono: 'Courier New', Courier, 'Lucida Console', monospace;
+
+$fs-base:  17px;
+$fs-sm:    0.875rem;
+$fs-xs:    0.8rem;
+$lh-base:  1.72;
+
+// ─── Layout ───────────────────────────────────────────────────────────────────
+$w-container:  1100px;
+$w-narrow:     720px;
+$header-h:     64px;
+
+// ─── Spacing ──────────────────────────────────────────────────────────────────
+$sp-xs:  0.5rem;
+$sp-sm:  1rem;
+$sp-md:  1.5rem;
+$sp-lg:  2.5rem;
+$sp-xl:  4rem;
+
+// ─── Decoration ───────────────────────────────────────────────────────────────
+$radius:    6px;
+$radius-lg: 10px;
+$shadow:    0 2px 10px rgba($c-secondary, 0.08);
+$shadow-lg: 0 6px 24px rgba($c-secondary, 0.13);
+
+// ─── Breakpoints ──────────────────────────────────────────────────────────────
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;

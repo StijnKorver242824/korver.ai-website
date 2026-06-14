@@ -1,79 +1,71 @@
-# Stijn Korver — Motorsport Portfolio
+# korver.ai — Jekyll Portfolio
 
-A Jekyll-powered portfolio site for **Stijn Korver**, BSc Applied Data Science & AI student, on a deliberate trajectory toward Formula 1 Data Analytics Engineer.
+Personal data science portfolio built with Jekyll for GitHub Pages.
 
-## What's in this project
+## Quick start
 
-This project ships **two parallel views** of the same design:
-
-1. **Static HTML prototype** (project root) — `index.html`, `projects/*.html`, `apps/index.html`. Click through the whole site offline. This is what the design-review preview shows.
-2. **Jekyll source** (`jekyll/`) — drop-in ready for GitHub Pages, with proper `_layouts`, `_includes`, `_projects` collection, and `_data/apps.yml`.
-
-Both render identically — same CSS, same JS, same SVG track.
-
-## The track is the navigation
-
-The home page replaces the conventional "Selected projects" grid with a **top-down racetrack** — Circuit Zandvoort, Stijn's home Dutch GP venue. Six corners → six projects.
-
-- **Turn 1** (Tarzan) opens Project 1
-- **Turns 2–5** open Projects 2–5
-- **Finish line marker** (FIN) opens Project 6 — the flagship Race Strategy Simulator
-
-Hover a corner → a tooltip pops with the project name + thumbnail. Click → project page. Keyboard-accessible (focus the corner, Enter to open).
-
-## Pages
-
-| Route | Purpose |
-|---|---|
-| `/` | Home: hero, about, racetrack, trajectory |
-| `/projects/` | All-projects grid (6 cards) |
-| `/projects/<slug>/` | Individual project page (case study + "Open App" CTA to external URL) |
-| `/apps/` | App-icon grid linking out to each project's live app domain |
-
-## Tweaks panel
-
-Bottom-right "Tweaks" toggle exposes:
-
-- **Theme** — Carbon (dark), Paper (light), Asphalt Blue, Pit Lane
-- **Hero variant** — Pit Wall / Driver / Countdown
-
-Both are persisted to `localStorage` so visitors keep their pick across pages.
-
-## Deploy as Jekyll on GitHub Pages
-
-1. Copy the contents of `jekyll/` into the **root** of a new GitHub repo.
-2. Commit and push.
-3. In repo Settings → Pages, set **Source: GitHub Actions** (or **Branch: main /root**).
-4. Done — your site will be at `https://<user>.github.io/<repo>/`.
-
-To preview locally:
 ```bash
-cd jekyll
+# Install dependencies (requires Ruby)
 bundle install
+
+# Serve locally
 bundle exec jekyll serve
+
+# Visit http://localhost:4000
 ```
 
-## Editing a project
+## Adding a project
 
-Each project lives in `jekyll/_projects/<order>-<slug>.md`. The front matter drives the project page hero + CTA + stats; the markdown body is the case study. Add `app_url` to enable the "Open App" CTA button.
+1. Copy `_projects/_template.md` to a new file named after your project slug (e.g. `_projects/hospital-readmission.md`)
+2. Fill in the front matter fields
+3. Write the article in Markdown below the `---`
+4. The page will be available at `/project/hospital-readmission/`
 
-## Editing apps
+### Front matter reference
 
-`jekyll/_data/apps.yml` — a single YAML list, one entry per app. Add a row and the apps grid picks it up.
+| Field | Required | Notes |
+|---|---|---|
+| `title` | Yes | Displayed as the page heading and card title |
+| `excerpt` | Yes | Shown on cards and in `<meta>` description |
+| `date` | Yes | Used for sorting — format: `YYYY-MM-DD` |
+| `tags` | No | List of short topic labels |
+| `tech` | No | Technologies used — shown as badges |
+| `type` | No | e.g. "Computer Vision", "NLP", "MLOps" |
+| `app_url` | No | Internal `/app/slug` or external URL — shows "Live demo" button |
+| `github_url` | No | Shows "View on GitHub" button |
+| `thumbnail` | No | Path to image in `/assets/images/` |
 
-## Editing the track
+## Adding an app demo page
 
-The track is the Zandvoort PNG (`assets/img/zandvoort.png`) layered with a transparent SVG holding the corner markers in `jekyll/_includes/track.html`. Marker coords are in 0–2127 image-pixel space — to move a corner, just edit its `cx`/`cy` (apex) and the connector line's `lx`/`ly` (label position).
+1. Copy `_apps/_template.md` to `_apps/your-slug.md`
+2. Set `embed_url` to your HuggingFace Space embed URL (or leave blank for "coming soon")
+3. The page will be available at `/app/your-slug/`
 
-To swap circuits, replace the PNG with another track outline of the same dimensions and re-trace the six markers using the same coordinate scheme.
+## Site config
 
-## Stack
+Edit `_config.yml` to update:
+- `title` — your site name
+- `url` — your domain
+- `github_username` — for footer link
+- `linkedin_url` — for footer link
+- `author.name` — for footer copyright
 
-- **Jekyll** — content + templating (GitHub Pages compatible)
-- **Vanilla HTML/CSS/JS** — no build step for the site itself
-- **React + Babel (in-browser)** — used only for the Tweaks panel; the page works fine without it
-- **Google Fonts** — Space Grotesk (display) + JetBrains Mono (data)
+## Deployment (GitHub Pages)
 
-## Contact
+1. Push this repo to GitHub
+2. Go to **Settings → Pages**
+3. Set source to your main branch, root folder
+4. GitHub builds and deploys automatically
 
-stijn@korver.ai · Breda, NL
+If you're using a custom domain, add a `CNAME` file to the repo root:
+```
+korver.ai
+```
+
+## Color scheme
+
+| Role | Hex | Usage |
+|---|---|---|
+| Dominant (60%) | `#effbef` | Page backgrounds, card surfaces |
+| Secondary (30%) | `#145214` | Navigation, headings, structural chrome, footer |
+| Accent (10%) | `#08a508` | CTA buttons, tags, active nav states, card top borders |
