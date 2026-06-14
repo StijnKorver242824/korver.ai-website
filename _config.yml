@@ -24,10 +24,10 @@ kramdown:
 collections:
   projects:
     output: true
-    permalink: /project/:name/
+    permalink: /projects/:path/
   apps:
     output: true
-    permalink: /app/:name/
+    permalink: /app/:path/
 
 # Default layouts
 defaults:
