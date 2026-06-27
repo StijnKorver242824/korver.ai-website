@@ -54,7 +54,8 @@ The channel slicer pattern, routing every core measure through a `SWITCH(SELECTE
 
 The model follows a standard **star schema** with fact tables at the centre connected to dimension tables via integer surrogate keys:
 
-```mermaiderDiagram
+```mermaid
+erDiagram
     FactInternetSales }o--|| DimDate : "OrderDateKey"
     FactInternetSales }o--|| DimProduct : "ProductKey"
     FactInternetSales }o--|| DimCustomer : "CustomerKey"
