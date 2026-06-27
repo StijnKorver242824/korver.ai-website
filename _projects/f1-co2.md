@@ -22,19 +22,19 @@ The deliverable was an interactive Power BI dashboard visualising per-race and p
 
 <!-- PLACEHOLDER: embed published Power BI dashboard here -->
 
-## My contribution
+## My Contribution
 
 This was an individual project. I was responsible for the full CRISP-DM pipeline: scoping the research question, sourcing and evaluating data, cleaning and transforming datasets, building the Power BI data model, and producing all dashboard visualisations. I also identified and resolved several data quality issues that arose during the process, including a systematic calculation error in one of the emissions tools I was using.
 
-## Technical approach
+## Technical Approach
 
-**Data sources**
+**Data Sources**
 
 Because F1 only publishes aggregated emissions figures for a small number of years (2018 and 2022), I constructed a per-race emissions dataset from 2010 onwards using CarbonCare, a CO2 calculator that follows the ISO standard. I cross-referenced this against F1's official sustainability reports to assess accuracy, and validated the overall trend against the Global Carbon Project (GCP) global aviation emissions dataset. For the race calendar structure (venues, countries, airports, and coordinates) I sourced data directly from the F1 website for seasons 2018–2025.
 
 I chose the GCP dataset over a similar UN dataset after discovering that the UN figures drop sharply after 2017 due to the number of contributing countries falling from 131 to 43, omitting high-emission nations such as China, India, Mexico and Brazil.
 
-**Data preparation**
+**Data Preparation**
 
 Cleaning and preparation involved several layers:
 
@@ -44,7 +44,7 @@ Cleaning and preparation involved several layers:
 - Built a **unique identifier (UID)** per race using an Excel formula combining year and round number (`RIGHT([Year],2)&IF(LEN([Round])=1,"0"&[Round],[Round])`), enabling a clean one-to-one relationship between the calendar and the calculated emissions tables.
 - Calculated the geographic distance between every pair of venues using the **Haversine formula** in Excel, then derived a minimum/optimal emission estimate per venue based on average emissions per km by transport mode.
 
-**Modelling and validation**
+**Modelling and Validation**
 
 After the initial calculations, my self-calculated totals fell short of F1's reported values by 9.3% (2018) and 5.1% (2022). After correcting the ultra-long-haul bug, the figures slightly overshot by 4.1% and 8.3% respectively. With no remaining identifiable errors, I concluded that the dataset was within an acceptable margin. The CarbonCare trend also closely mirrored GCP's global aviation emissions trend over the same period, lending additional confidence to the data.
 
@@ -52,7 +52,7 @@ After the initial calculations, my self-calculated totals fell short of F1's rep
 
 The dashboard visualises per-race emissions, total seasonal emissions, venue travel efficiency, and a comparison against global aviation. It is designed so that adding new data does not require changes to the visualisations. Only the source files need updating.
 
-## What I found difficult
+## Difficulties
 
 The biggest challenge was the **lack of granular, reliable public data**. F1 only reports total aggregated emissions for two seasons, so constructing a per-race time series from scratch required evaluating multiple tools and datasets, encountering and fixing a systematic calculation error in CarbonCare, and carefully evaluating competing global emissions datasets before settling on GCP's.
 
@@ -60,7 +60,7 @@ The other major difficulty was a feature I had planned but ultimately could not 
 
 As a partial substitute, I used the venue efficiency scores calculated during the modelling phase to give users an indication of how efficiently F1 travels to each location.
 
-## Key finding
+## Key Finding
 
 The data confirms an expected but important pattern: more race events correlates with higher total emissions. The 2020 COVID-shortened season is a notable outlier. Emissions were substantially lower than the trend line predicted for that number of events, suggesting that reducing the calendar size is an effective lever. Whether reordering the calendar alone can achieve the 45% emissions reduction required by SDG 13 by 2030 compared to 2010 levels remains an open question for future research.
 
@@ -75,7 +75,7 @@ The data confirms an expected but important pattern: more race events correlates
 
 All source files are stored as `.xlsx` and `.csv`.
 
-## Future directions
+## Future Directions
 
 - Implement a TSP-based optimal route visualiser (Python or R) outside of Power BI's execution constraints
 - Automate data ingestion via API to keep the dashboard maintainable at scale
