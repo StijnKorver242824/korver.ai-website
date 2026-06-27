@@ -5,12 +5,12 @@ layout: default
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <p class="hero-eyebrow">{{ page.eyebrow | default: "Data Science & Machine Learning" }}</p>
+      <p class="hero-eyebrow">{{ page.eyebrow | default: "Data Science & Artificial Intelligence" }}</p>
       <h1 class="hero-title">{{ page.hero_title | default: site.title }}</h1>
       <p class="hero-subtitle">{{ page.hero_subtitle | default: site.description }}</p>
       <div class="hero-actions">
-        <a href="{{ '/projects/' | relative_url }}" class="btn btn-primary">View my projects</a>
-        <a href="{{ '/about/' | relative_url }}" class="btn btn-ghost">About me</a>
+        <a href="{{ '/projects/' | relative_url }}" class="btn btn-primary">View my Projects</a>
+        <a href="{{ '/about/' | relative_url }}" class="btn btn-ghost">About Me</a>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@ layout: default
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Projects</h2>
-      <a href="{{ '/projects/' | relative_url }}" class="section-link">View all →</a>
+      <a href="{{ '/projects/' | relative_url }}" class="section-link">View All</a>
     </div>
 
     <div class="project-grid">
@@ -59,10 +59,10 @@ layout: default
           {% endif %}
 
           <div class="card-links">
-            <a href="{{ project.url | relative_url }}" class="btn btn-secondary btn-sm">Read more</a>
+            <a href="{{ project.url | relative_url }}" class="btn btn-secondary btn-sm">Read More</a>
             {% if project.app_url %}
             <a href="{{ project.app_url }}" class="btn btn-primary btn-sm" {% unless project.app_url contains '/' %}target="_blank" rel="noopener noreferrer"{% endunless %}>
-              Live demo →
+              Live Demo
             </a>
             {% endif %}
           </div>

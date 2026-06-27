@@ -8,7 +8,7 @@ permalink: /projects/
   <div class="container">
     <div class="projects-page page-intro">
       <h1>Projects</h1>
-      <p>Eight projects from my BSc, spanning computer vision, NLP, classical machine learning, data visualisation, and MLOps. Click any project to read the full write-up.</p>
+      <p>All my projects, made during or alongside my BSc, spanning computer vision, NLP, classical machine learning, data visualisation, MLOps, and more. Click any project to read the full write-up.</p>
     </div>
 
     <div class="project-grid">

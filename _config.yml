@@ -1,15 +1,15 @@
-title: "Korver.ai"
-tagline: "Data Science & Machine Learning"
-description: "BSc portfolio showcasing projects in computer vision, NLP, MLOps and classical machine learning."
+title: "Korver AI Solutions"
+tagline: "Data Science & Artificial Intelligence"
+description: "Portfolio Showcasing my Projects"
 url: "https://korver.ai"
 baseurl: ""
 
 author:
-  name: "Korver"
-  email: ""
+  name: "Stijn Korver"
+  email: "stijn@korver.ai"
 
-github_username: ""
-linkedin_url: ""
+github_username: "StijnKorver242824"
+linkedin_url: "https://www.linkedin.com/in/stijnkorver/"
 
 # Build settings
 markdown: kramdown

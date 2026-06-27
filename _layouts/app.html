@@ -8,9 +8,9 @@ layout: default
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         {% if page.project_url %}
-        <a href="{{ page.project_url | relative_url }}">← Back to project</a>
+        <a href="{{ page.project_url | relative_url }}">Back to Project</a>
         {% else %}
-        <a href="{{ '/projects/' | relative_url }}">← All projects</a>
+        <a href="{{ '/projects/' | relative_url }}">← All Projects</a>
         {% endif %}
       </nav>
 
@@ -22,7 +22,7 @@ layout: default
 
       {% if page.github_url %}
       <a href="{{ page.github_url }}" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer">
-        View source on GitHub
+        View Source on GitHub
       </a>
       {% endif %}
     </div>
@@ -47,7 +47,7 @@ layout: default
         <h2>Demo coming soon</h2>
         <p>This project is currently being prepared for deployment. Check back shortly.</p>
         {% if page.project_url %}
-        <a href="{{ page.project_url | relative_url }}" class="btn btn-primary">Read about the project</a>
+        <a href="{{ page.project_url | relative_url }}" class="btn btn-primary">About the Project</a>
         {% endif %}
       </div>
     </div>
@@ -57,7 +57,7 @@ layout: default
   {% if content != "" %}
   <div class="app-notes">
     <div class="container container--narrow">
-      <h2>How to use</h2>
+      <h2>How To</h2>
       {{ content }}
     </div>
   </div>

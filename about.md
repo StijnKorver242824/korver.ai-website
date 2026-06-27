@@ -8,7 +8,7 @@ permalink: /about/
   <div class="container--narrow container">
     <div class="page-header">
       <h1>About me</h1>
-      <p class="page-subtitle">BSc Data Science — [Your university], [Year]</p>
+      <p class="page-subtitle">BSc Applied Data Science & Artificial Intelligence</p>
     </div>
 
     <!-- Replace everything below with your own content -->
