@@ -238,18 +238,16 @@
 
 // ─── Dashboard embed (16:9, breaks out of narrow column) ─────────────────────
 .dashboard-embed {
-  $side-breakout: ($w-container - $w-narrow) / 2; // = 190px
+  $side-breakout: ($w-container - $w-narrow) / 2;
 
-  // Pull left & right past .container--narrow padding to reach full container width
   margin-top: 2rem;
   margin-bottom: 2rem;
   margin-left:  calc(-#{$side-breakout} - #{$sp-md});
   margin-right: calc(-#{$side-breakout} - #{$sp-md});
 
-  // 16:9 aspect ratio — padding-bottom is always % of *width*, so this stays true at any size
-  position: relative;
-  height: 0;
-  padding-bottom: 56.25%;
+  // Remove position/height/padding-bottom — use aspect-ratio instead
+  aspect-ratio: 16 / 10;   // slightly taller than 16:9 to absorb Power BI's toolbar
+  min-height: 500px;        // fallback for very narrow viewports
 
   border-radius: $radius-lg;
   overflow: hidden;
@@ -257,12 +255,17 @@
   box-shadow: $shadow-lg;
 
   iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     border: none;
     display: block;
   }
+
+  @media (max-width: $bp-md) {
+    margin-left:  -$sp-md;
+    margin-right: -$sp-md;
+  }
+}
 
   // On small viewports, just go edge-to-edge with the page padding
   @media (max-width: $bp-md) {

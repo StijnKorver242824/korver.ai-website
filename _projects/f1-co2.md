@@ -5,7 +5,6 @@ date: 2024-10-28
 tags: [Research, Dashboard, SDG]
 tech: [Power BI, Power Query, Python, Excel]
 type: "Dashboard"
-app_url: "/app/f1-co2-dashboard"
 github_repo: "formula-1-co2-dashboard"
 thumbnail: "/assets/images/f1-co2.png"
 ---
