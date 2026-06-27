@@ -39,12 +39,12 @@ permalink: /projects/
           {% endif %}
 
           <div class="card-links">
-            <a href="{{ project.url | relative_url }}" class="btn btn-secondary btn-sm">Read more</a>
+            <a href="{{ project.url | relative_url }}" class="btn btn-secondary btn-sm">Read More</a>
             {% if project.app_url %}
             <a href="{{ project.app_url }}"
                class="btn btn-primary btn-sm"
                {% unless project.app_url contains '/' %}target="_blank" rel="noopener noreferrer"{% endunless %}>
-              Live demo →
+              Live Demo
             </a>
             {% endif %}
           </div>
