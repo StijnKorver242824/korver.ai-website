@@ -267,27 +267,6 @@
   }
 }
 
-  // On small viewports, just go edge-to-edge with the page padding
-  @media (max-width: $bp-md) {
-    margin-left:  -$sp-md;
-    margin-right: -$sp-md;
-  }
-}
-
-.dashboard-note {
-  font-size: $fs-xs;
-  color: $c-text-muted;
-  margin: 0.5rem 0 0;
-
-  code {
-    background: rgba($c-secondary, 0.08);
-    padding: 0.1em 0.35em;
-    border-radius: 3px;
-  }
-
-  &.hidden { display: none; }
-}
-
 // ─── Responsive ───────────────────────────────────────────────────────────────
 @media (max-width: $bp-md) {
   .project-header { padding: 2rem 0 2rem; }
