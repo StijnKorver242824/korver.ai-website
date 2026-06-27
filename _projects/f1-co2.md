@@ -20,7 +20,15 @@ This project investigates that gap, framed under **SDG 13: Climate Action** (Tar
 
 The deliverable was an interactive Power BI dashboard visualising per-race and per-season emissions, travel distances, and venue efficiency scores from 2010 through to the projected 2025 calendar.
 
-<!-- PLACEHOLDER: embed published Power BI dashboard here -->
+<div class="dashboard-embed">
+  <iframe
+    title="F1 CO2 Dashboard"
+    src="https://app.powerbi.com/view?r=eyJrIjoiNTEwN2RhYzktNTZlNS00MjEwLThkMmMtNjk3MjQ2OTI4ZTI5IiwidCI6IjBhMzM1ODliLTAwMzYtNGZlOC1hODI5LTNlZDA5MjZhZjg4NiIsImMiOjl9"
+    frameborder="0"
+    allowFullScreen="true"
+    style="width: 100%; height: 600px; border-radius: 8px;">
+  </iframe>
+</div>
 
 ## My Contribution
 
