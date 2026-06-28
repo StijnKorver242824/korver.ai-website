@@ -1,5 +1,5 @@
 ---
-title: "AdventureWorks Power BI Dashboard"
+title: "AdventureWorks Dashboard"
 excerpt: "An enterprise-grade interactive Power BI dashboard built on the AdventureWorksDW2019 data warehouse, covering sales performance, customer geography, product hierarchy, pricing analysis, and executive reporting."
 date: 2025-11-07
 tags: [Data Analytics, Business Intelligence]
