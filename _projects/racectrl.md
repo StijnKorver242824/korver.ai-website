@@ -2,10 +2,9 @@
 title: "RaceCTRL"
 excerpt: "An AI steward assistant that classifies Formula 1 collisions from onboard camera footage using deep learning, with Grad-CAM explainability for transparent decision support."
 date: 2025-04-11
-tags: [Computer Vision, Deep Learning, XAI, Human-AI Interaction]
+tags: [Computer Vision, Deep Learning, XAI]
 tech: [Python, PyTorch, Grad-CAM, Figma]
 type: "Computer Vision"
-app_url: "/app/racectrl"
 github_repo: "racectrl"
 thumbnail: "/assets/images/racectrl.png"
 ---
