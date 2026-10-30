@@ -1,31 +1,27 @@
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <a href="{{ '/' | relative_url }}" class="footer-logo">{{ site.title }}</a>
-        <p>{{ site.tagline }}</p>
-      </div>
-
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/projects/' | relative_url }}">Projects</a>
-        <a href="{{ '/about/' | relative_url }}">About</a>
-      </nav>
-
-      {% if site.github_username or site.linkedin_url %}
-      <div class="footer-social">
-        {% if site.github_username %}
-        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">GitHub</a>
-        {% endif %}
-        {% if site.linkedin_url %}
-        <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        {% endif %}
-      </div>
-      {% endif %}
+<div class="footer-company">
+  <div class="footer-company-grid reveal">
+    <div class="company-info-item">
+      <div class="company-info-label">{% if page.lang == 'nl' %}Locatie{% else %}Location{% endif %}</div>
+      <div class="company-info-value">'s-Hertogenbosch, {% if page.lang == 'nl' %}Noord-Brabant{% else %}The Netherlands{% endif %}</div>
     </div>
-
-    <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    <div class="company-info-item">
+      <div class="company-info-label">{% if page.lang == 'nl' %}KVK Nummer{% else %}KVK Number{% endif %}</div>
+      <a href="https://www.kvk.nl/bestellen/#/97486663000062723944" class="company-info-value" target="_blank">97486663</a>
+    </div>
+    <div class="company-info-item">
+      <div class="company-info-label">{% if page.lang == 'nl' %}Telefoon{% else %}Phone{% endif %}</div>
+      <a href="tel:+31621931053" class="company-info-value">{% if page.lang == 'nl' %}06 21 93 10 53{% else %}+31 6 21 93 10 53{% endif %}</a>
+    </div>
+    <div class="company-info-item">
+      <div class="company-info-label">{% if page.lang == 'nl' %}E-mail{% else %}Email{% endif %}</div>
+      <a href="mailto:hello@korver.ai" class="company-info-value">hello@korver.ai</a>
+    </div>
   </div>
-</footer>
+</div>
 
-<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+<footer class="site-footer">
+  <a href="{% if page.lang == 'nl' %}/nl/{% else %}/en/{% endif %}" class="footer-logo">
+    <img src="{{ '/assets/images/branding/wordmark_navy.png' | relative_url }}" alt="Korver AI Solutions" height="24" />
+  </a>
+  <p class="footer-copy">{% if page.lang == 'nl' %}© 2026 Korver AI Solutions — Alle rechten voorbehouden{% else %}© 2026 Korver AI Solutions — All rights reserved{% endif %}</p>
+</footer>

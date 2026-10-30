@@ -1,0 +1,699 @@
+---
+layout: default
+title: What We Do
+permalink: /en/services/
+lang: en
+lang_nl: /nl/diensten/
+---
+
+<style>
+  /* HERO */
+  .services-hero {
+    padding: 10rem 3rem 5rem;
+    background: var(--accent);
+    position: relative;
+    overflow: hidden;
+  }
+  .services-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(55,71,130,0.15) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .services-hero-content { position: relative; z-index: 1; max-width: 700px; }
+  .services-hero .section-tag { color: rgba(55,71,130,0.5); }
+  .services-hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--navy);
+    margin: 0.5rem 0 1.5rem;
+    line-height: 1.05;
+  }
+  .services-hero h1 em { font-style: normal; color: var(--black); }
+  .services-hero-sub {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(55,71,130,0.7);
+    line-height: 1.75;
+    max-width: 560px;
+  }
+
+  /* INTRO SECTION */
+  .services-intro {
+    padding: 7rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7rem;
+    align-items: center;
+  }
+  .services-intro-text .section-tag { margin-bottom: 1rem; }
+  .services-intro-text h2 {
+    font-family: var(--font-head);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+  .services-intro-text h2 em { font-style: normal; color: var(--gray); }
+  .services-intro-text p {
+    color: var(--gray);
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.85;
+    margin-bottom: 1rem;
+  }
+  .services-intro-visual {
+    background: var(--navy);
+    border-radius: 1.25rem;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .services-intro-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(251,195,36,0.12) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .services-intro-badge {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    background: var(--accent);
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    z-index: 2;
+  }
+  .services-intro-badge-num {
+    font-family: var(--font-head);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  .services-intro-badge-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: rgba(55,71,130,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.2rem;
+  }
+
+  /* PROBLEMS SECTION */
+  .services-problems {
+    background: var(--gray-light);
+    padding: 7rem 3rem;
+  }
+  .services-problems-header {
+    max-width: 600px;
+    margin-bottom: 4rem;
+  }
+  .services-problems-header h2 {
+    font-family: var(--font-head);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .services-problems-header h2 em { font-style: normal; color: var(--gray); }
+  .services-problems-header p {
+    color: var(--gray);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+  .problems-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .problem-card {
+    background: var(--white);
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1.5px solid transparent;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .problem-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(55,71,130,0.08);
+  }
+  .problem-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    font-size: 1.4rem;
+  }
+  .problem-title {
+    font-family: var(--font-head);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+  }
+  .problem-desc {
+    font-size: 0.9rem;
+    color: var(--gray);
+    font-weight: 300;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    flex: 1;
+  }
+  .problem-capability {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gray-light);
+    padding: 0.3rem 0.75rem;
+    border-radius: 2rem;
+  }
+
+  /* HOW WE WORK */
+  .services-how {
+    padding: 7rem 3rem;
+  }
+  .services-how-header {
+    max-width: 600px;
+    margin-bottom: 5rem;
+  }
+  .services-how-header h2 {
+    font-family: var(--font-head);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .services-how-header h2 em { font-style: normal; color: var(--gray); }
+  .services-how-header p {
+    color: var(--gray);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 2.25rem;
+    left: 2.25rem;
+    right: 2.25rem;
+    height: 2px;
+    background: var(--gray-mid);
+    z-index: 0;
+  }
+  .process-step {
+    position: relative;
+    z-index: 1;
+    padding: 0 1.5rem 0 0;
+  }
+  .process-step-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--gray-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-head);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
+  }
+  .process-step:hover .process-step-num {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--navy);
+  }
+  .process-step-title {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+  }
+  .process-step-desc {
+    font-size: 0.875rem;
+    color: var(--gray);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  /* ENGAGEMENT MODELS */
+  .services-engagements {
+    background: var(--navy);
+    padding: 7rem 3rem;
+  }
+  .services-engagements-header {
+    max-width: 600px;
+    margin-bottom: 4rem;
+  }
+  .services-engagements-header .section-tag { color: rgba(255,255,255,0.4); }
+  .services-engagements-header h2 {
+    font-family: var(--font-head);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .services-engagements-header h2 em { font-style: normal; color: var(--accent); }
+  .services-engagements-header p {
+    color: rgba(255,255,255,0.5);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+  .engagements-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .engagement-card {
+    background: rgba(255,255,255,0.05);
+    border: 1.5px solid rgba(255,255,255,0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .engagement-card:hover {
+    background: rgba(251,195,36,0.08);
+    border-color: rgba(251,195,36,0.4);
+  }
+  .engagement-type {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  .engagement-title {
+    font-family: var(--font-head);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+  .engagement-desc {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+  .engagement-fit {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+    font-weight: 300;
+    font-style: italic;
+  }
+  .engagement-fit strong {
+    font-style: normal;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* WHY CUSTOM */
+  .services-why {
+    padding: 7rem 3rem;
+    background: var(--gray-light);
+  }
+  .services-why-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7rem;
+    align-items: center;
+  }
+  .services-why-text h2 {
+    font-family: var(--font-head);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+  .services-why-text h2 em { font-style: normal; color: var(--gray); }
+  .services-why-text p {
+    color: var(--gray);
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.85;
+    margin-bottom: 1rem;
+  }
+  .services-why-text .btn-primary { margin-top: 1rem; }
+  .compare-table {
+    background: var(--white);
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1.5px solid var(--gray-mid);
+  }
+  .compare-header {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    background: var(--navy);
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+  .compare-header-cell {
+    font-family: var(--font-head);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+  .compare-header-cell.highlight { color: var(--accent); }
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    padding: 0.9rem 1.5rem;
+    gap: 1rem;
+    border-top: 1px solid var(--gray-light);
+    align-items: center;
+  }
+  .compare-row:hover { background: var(--gray-light); }
+  .compare-label {
+    font-size: 0.875rem;
+    color: var(--navy);
+    font-weight: 500;
+  }
+  .compare-cell {
+    font-size: 0.875rem;
+    color: var(--gray);
+    font-weight: 300;
+  }
+  .compare-cell.yes {
+    color: var(--navy);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .compare-cell.yes::before {
+    content: '✓';
+    color: var(--accent-dark);
+    font-weight: 800;
+  }
+  .compare-cell.no {
+    color: var(--gray-mid);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .compare-cell.no::before {
+    content: '✗';
+    color: var(--gray-mid);
+  }
+
+  /* CTA */
+  .services-cta {
+    padding: 6rem 3rem;
+    background: var(--navy);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .services-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(251,195,36,0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .services-cta-content { position: relative; z-index: 1; }
+  .services-cta h2 {
+    font-family: var(--font-head);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .services-cta h2 em { font-style: normal; color: var(--accent); }
+  .services-cta .btn-secondary {
+    color: var(--accent);
+    border-color: rgba(251,195,36,0.4);
+  }
+  .services-cta .btn-secondary:hover { border-color: var(--accent); }
+  .services-cta p {
+    color: rgba(255,255,255,0.5);
+    font-size: 1.05rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    .services-hero { padding: 8rem 1.5rem 3rem; }
+    .services-intro { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
+    .services-problems { padding: 5rem 1.5rem; }
+    .problems-grid { grid-template-columns: 1fr; }
+    .services-how { padding: 5rem 1.5rem; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .process-steps::before { display: none; }
+    .services-engagements { padding: 5rem 1.5rem; }
+    .engagements-grid { grid-template-columns: 1fr; }
+    .services-why { padding: 5rem 1.5rem; }
+    .services-why-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .services-cta { padding: 4rem 1.5rem; }
+  }
+  @media (max-width: 600px) {
+    .process-steps { grid-template-columns: 1fr; }
+    .compare-header, .compare-row { grid-template-columns: 1.5fr 1fr 1fr; }
+  }
+</style>
+
+<section class="services-hero">
+  <div class="services-hero-content">
+    <p class="section-tag">How It Works</p>
+    <h1>Built for your problem,<br/><em>not the average one</em></h1>
+    <p class="services-hero-sub">I build practical AI solutions for small and medium businesses — tailored to your workflows, your data, and the specific problem you're trying to solve.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div class="services-intro">
+  <div class="services-intro-text reveal">
+    <p class="section-tag">The Approach</p>
+    <h2>Understand first.<br/><em>Then build.</em></h2>
+    <p>Many businesses buy off-the-shelf AI tools and spend months trying to make them fit. I work the other way around: I start by understanding your problem, your data, and your workflows, and then build a solution designed around them.</p>
+    <p>The result is something your team can actually use, that solves the real problem, and that doesn't require a data science department to maintain.</p>
+  </div>
+  <div class="services-intro-visual reveal">
+    <img src="{{ '/assets/images/branding/favicon_yellow.png' | relative_url }}"
+        alt="Korver AI Solutions"
+        style="width: 45%; position: relative; z-index: 2;" />
+  </div>
+</div>
+
+<!-- PROBLEMS WE SOLVE -->
+<div class="services-problems">
+  <div class="services-problems-header reveal">
+    <p class="section-tag">Problems I Solve</p>
+    <h2>Does this <em>sound familiar?</em></h2>
+    <p>These are the kinds of challenges businesses bring to me. Each maps to a capability I've built and proven in practice.</p>
+  </div>
+  <div class="problems-grid">
+    <div class="problem-card reveal">
+      <div class="problem-icon">🏪</div>
+      <div class="problem-title">You're spending hours on tasks a system could handle</div>
+      <p class="problem-desc">Scheduling, data entry, report generation, stock tracking — manual work that repeats every day or week. You don't need a research project, you need it automated.</p>
+      <span class="problem-capability">Automate your documents</span>
+    </div>
+    <div class="problem-card reveal">
+      <div class="problem-icon">📈</div>
+      <div class="problem-title">You're sitting on data but can't act on it</div>
+      <p class="problem-desc">Sales figures, operational logs, customer records — the information exists, but there's no pipeline turning it into decisions you can actually make.</p>
+      <span class="problem-capability">Make better decisions</span>
+    </div>
+    <div class="problem-card reveal">
+      <div class="problem-icon">⚙️</div>
+      <div class="problem-title">Your tools don't talk to each other</div>
+      <p class="problem-desc">Someone on your team re-enters the same data in two places every day. A spreadsheet exists just to bridge a gap between systems. That's fixable.</p>
+      <span class="problem-capability">Automate your reporting</span>
+    </div>
+    <div class="problem-card reveal">
+      <div class="problem-icon">📊</div>
+      <div class="problem-title">Reports take too long to produce</div>
+      <p class="problem-desc">Your weekly or monthly reports are assembled manually — pulling numbers from different places, formatting them, sending them out. That whole cycle can run itself.</p>
+      <span class="problem-capability">Automate your reporting</span>
+    </div>
+    <div class="problem-card reveal">
+      <div class="problem-icon">📋</div>
+      <div class="problem-title">Documents are processed by hand</div>
+      <p class="problem-desc">Invoices, order forms, delivery notes — your team reads them, types the data somewhere else, and files them. Every step of that can be automated.</p>
+      <span class="problem-capability">Automate your documents</span>
+    </div>
+    <div class="problem-card reveal">
+      <div class="problem-icon">🧩</div>
+      <div class="problem-title">You've looked at tools, and none quite fit</div>
+      <p class="problem-desc">Your problem is specific enough that generic software doesn't cover it. You need something built around your situation — not the other way around.</p>
+      <span class="problem-capability">Custom Build</span>
+    </div>
+  </div>
+</div>
+
+<!-- HOW WE WORK -->
+<div class="services-how">
+  <div class="services-how-header reveal">
+    <p class="section-tag">Process</p>
+    <h2>How a project<br/><em>actually works</em></h2>
+    <p>Every engagement follows the same progression — from understanding your problem to a working solution you fully own.</p>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="process-step-num">01</div>
+      <div class="process-step-title">Discovery</div>
+      <p class="process-step-desc">I map your problem, your data, your existing tools, and what success looks like. No assumptions, no skipping ahead.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="process-step-num">02</div>
+      <div class="process-step-title">Design</div>
+      <p class="process-step-desc">I propose what gets built, how it integrates, and what the end result looks like in your hands — before writing a line of code.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="process-step-num">03</div>
+      <div class="process-step-title">Build</div>
+      <p class="process-step-desc">I build iteratively with regular check-ins. You see progress early and often, not just at the end.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="process-step-num">04</div>
+      <div class="process-step-title">Handover</div>
+      <p class="process-step-desc">Full documentation and a walkthrough so you understand exactly what was built and how to run it. No dependency on me to keep the lights on.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ENGAGEMENT MODELS -->
+<div class="services-engagements" id="engagement-models">
+  <div class="services-engagements-header reveal">
+    <p class="section-tag">Engagement Models</p>
+    <h2>Work with me<br/><em>on your terms</em></h2>
+    <p>Every business is different. Here are four ways to engage, depending on what the problem and timeline demand.</p>
+  </div>
+  <div class="engagements-grid">
+    <div class="engagement-card reveal">
+      <div class="engagement-type">Fixed-Scope Project</div>
+      <div class="engagement-title">Defined deliverable, defined price</div>
+      <p class="engagement-desc">A clear problem, a clear output. We scope it together, agree on a price, and I deliver. Works best when the problem is well-understood and the success criteria are specific.</p>
+      <p class="engagement-fit"><strong>Best for:</strong> Automation systems, document processing, dashboards, reporting pipelines</p>
+    </div>
+    <div class="engagement-card reveal">
+      <div class="engagement-type">Research-First</div>
+      <div class="engagement-title">Understand before building</div>
+      <p class="engagement-desc">When you know there's a problem but aren't sure what the solution looks like yet. I investigate, prototype, and validate before committing to a full build.</p>
+      <p class="engagement-fit"><strong>Best for:</strong> Businesses new to AI, feasibility questions, unclear problem definitions</p>
+    </div>
+    <div class="engagement-card reveal">
+      <div class="engagement-type">Embedded</div>
+      <div class="engagement-title">Inside your team, temporarily</div>
+      <p class="engagement-desc">I join your team for a defined period — working alongside your people, in your stack, on your priorities. Useful when you need technical depth without a permanent hire.</p>
+      <p class="engagement-fit"><strong>Best for:</strong> In-progress projects, capability gaps, short-term technical needs</p>
+    </div>
+    <div class="engagement-card reveal">
+      <div class="engagement-type">Retainer</div>
+      <div class="engagement-title">Ongoing technical partnership</div>
+      <p class="engagement-desc">A reserved capacity arrangement for businesses that need recurring support, system maintenance, or continued development beyond a first project.</p>
+      <p class="engagement-fit"><strong>Best for:</strong> Evolving systems, long-term integrations, continuous improvement</p>
+    </div>
+  </div>
+</div>
+
+<!-- WHY CUSTOM -->
+<div class="services-why">
+  <div class="services-why-inner">
+    <div class="services-why-text reveal">
+      <p class="section-tag">Why Custom?</p>
+      <h2>Off-the-shelf tools have a<br/><em>ceiling</em></h2>
+      <p>Generic AI products are built to work for the average use case. If your problem is straightforward, they're fine. But when your data is specific, your workflow is unusual, or the stakes are high, averages don't cut it.</p>
+      <p>Custom-built means the solution is trained on your data, designed for your users, and integrated with your systems — not the other way around.</p>
+      <a href="/en/contact/" class="btn-primary">Discuss Your Project</a>
+    </div>
+    <div class="compare-table reveal">
+      <div class="compare-header">
+        <div class="compare-header-cell"></div>
+        <div class="compare-header-cell">Off-the-shelf</div>
+        <div class="compare-header-cell highlight">Korver AI</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-label">Trained on your data</div>
+        <div class="compare-cell no">Generic</div>
+        <div class="compare-cell yes">Always</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-label">Fits your workflow</div>
+        <div class="compare-cell no">Partial</div>
+        <div class="compare-cell yes">By design</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-label">You own the output</div>
+        <div class="compare-cell no">Rarely</div>
+        <div class="compare-cell yes">Always</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-label">Explainable to stakeholders</div>
+        <div class="compare-cell no">Black box</div>
+        <div class="compare-cell yes">Built in</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-label">No ongoing licence fee</div>
+        <div class="compare-cell no">Subscription</div>
+        <div class="compare-cell yes">One-time</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="services-cta">
+  <div class="services-cta-content reveal">
+    <h2>Ready to scope <em>something?</em></h2>
+    <p>Tell me what you're working on. If it's a good fit, I'll say so. If not, I'll point you in the right direction.</p>
+    <a href="/en/contact/" class="btn-primary">Get in Touch</a>
+  </div>
+</div>

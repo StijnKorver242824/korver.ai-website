@@ -1,63 +1,51 @@
-title: "Korver AI Solutions"
-tagline: "Data Science & Artificial Intelligence"
-description: "Portfolio Showcasing my Projects"
-url: "https://korver.ai"
+title: Korver AI Solutions
+email: hello@korver.ai
+description: Korver AI Solutions develops purposeful software and research-driven projects at the intersection of technology and real-world impact.
 baseurl: ""
-
-author:
-  name: "Stijn Korver"
-  email: "stijn@korver.ai"
-
-github_username: "StijnKorver242824"
-linkedin_url: "https://www.linkedin.com/in/stijnkorver/"
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-permalink: pretty
-
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+url: "https://korver.ai"
+instagram_username: korver.ai
 
 # Collections
 collections:
-  projects:
+  projects_en:
     output: true
-    permalink: /projects/:path/
-  apps:
+    permalink: /en/projects/:name/
+  projects_nl:
     output: true
-    permalink: /app/:path/
+    permalink: /nl/projecten/:name/
 
-# Default layouts
-defaults:
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "project"
-  - scope:
-      path: ""
-      type: "apps"
-    values:
-      layout: "app"
-
-# Plugins (all GitHub Pages safe)
+# Build Settings
+remote_theme: null
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
 
-# Sass
-sass:
-  sass_dir: _sass
-  style: compressed
+# Language Settings
+defaults:
+  - scope:
+      path: "en"
+    values:
+      lang: en
+  - scope:
+      path: "nl"
+    values:
+      lang: nl
+  - scope:
+      path: ""
+      type: projects_en
+    values:
+      lang: en
+      layout: project
+  - scope:
+      path: ""
+      type: projects_nl
+    values:
+      lang: nl
+      layout: project
 
-# Exclude from build
+# Exclude from Processing
 exclude:
   - Gemfile
   - Gemfile.lock
+  - node_modules
+  - vendor
   - README.md
-  - vendor/
-  - node_modules/
-  - .sass-cache/
